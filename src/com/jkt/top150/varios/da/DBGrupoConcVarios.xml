@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+<entity name="Queries">
+
+ <insert>
+  <query value="INSERT INTO SCHEMA.GrupoConcVarios
+               (oid_grupo,codigo,descripcion,orden,activo)
+                VALUES (?,?,?,?,1)" />
+
+  <param index="1" value="OID"/>
+  <param index="2" value="codigo"/>
+  <param index="3" value="descripcion"/>
+  <param index="4" value="orden"/>
+ </insert>
+
+ <update>
+  <query value="UPDATE SCHEMA.GrupoConcVarios SET 
+                codigo = ?, descripcion = ?, orden = ?, activo = 1
+                WHERE OID_GRUPO = ? " />
+
+  <param index="1" value="codigo"/>
+  <param index="2" value="descripcion"/>
+  <param index="3" value="orden"/>
+  <param index="4" value="OID"/>
+ </update>
+
+ <delete>
+  <query value="UPDATE SCHEMA.GrupoConcVarios SET ACTIVO = 0 WHERE OID_GRUPO = ? " />
+  <param index="1" value="OID"/>
+ </delete>
+
+ <select>
+   <query name="1" value="SELECT * FROM SCHEMA.GrupoConcVarios WHERE OID_GRUPO = ?"/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="2" value="SELECT * FROM SCHEMA.GrupoConcVarios WHERE CODIGO = ?"/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="3" value="SELECT * FROM SCHEMA.GrupoConcVarios "/>
+ </select>
+
+</entity>

@@ -1,0 +1,67 @@
+<?xml version="1.0" standalone="yes"?>
+<entity name="Queries">
+
+ <insert>
+  <query value="INSERT INTO SCHEMA.ValorCapacidad
+               (oid_val_cap,codigo,descripcion,orden,valor_numerico,activo, desc_ext, valoracion_global)
+                VALUES (?,?,?,?,?,1,?,?)" />
+
+  <param index="1" value="OID"/>
+  <param index="2" value="codigo"/>
+  <param index="3" value="descripcion"/>
+  <param index="4" value="orden"/>
+  <param index="5" value="valorNumerico"/>
+  <param index="6" value="descExtendida"/>
+  <param index="7" value="isValoracionGlobal"/>
+ </insert>
+
+ <update>
+  <query value="UPDATE SCHEMA.ValorCapacidad SET 
+                codigo = ?, descripcion = ?, orden = ?, valor_numerico = ?, activo = 1, desc_ext = ?,valoracion_global = ?
+                WHERE OID_VAL_CAP = ? " />
+
+  <param index="1" value="codigo"/>
+  <param index="2" value="descripcion"/>
+  <param index="3" value="orden"/>
+  <param index="4" value="valorNumerico"/>
+  <param index="5" value="descExtendida"/>
+  <param index="6" value="isValoracionGlobal"/>
+  <param index="7" value="OID"/>
+ </update>
+
+ <delete>
+  <query value="UPDATE SCHEMA.ValorCapacidad SET ACTIVO = 0 WHERE OID_VAL_CAP = ? " />
+  <param index="1" value="OID"/>
+ </delete>
+
+ <select>
+   <query name="1" value="SELECT * FROM SCHEMA.ValorCapacidad WHERE OID_VAL_CAP = ?"/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="2" value="SELECT * FROM SCHEMA.ValorCapacidad WHERE CODIGO = ? "/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="3" value="SELECT * FROM SCHEMA.ValorCapacidad ORDER BY VALOR_NUMERICO "/>
+ </select>
+
+ <select>
+   <query name="4" value="SELECT * FROM SCHEMA.ValorCapacidad WHERE ACTIVO = 1 ORDER BY ORDEN "/>
+ </select>
+
+ <select>
+   <!--  MAXIMO VALOR -->
+   <query name="20" value="SELECT * FROM SCHEMA.ValorCapacidad WHERE ACTIVO = 1 AND VALOR_NUMERICO IN (
+                           SELECT MAX(valor_numerico) from SCHEMA.ValorCapacidad WHERE ACTIVO = 1) "/>
+ </select>
+ 
+ <select>
+   <!--  MINIMO VALOR -->
+   <query name="21" value="SELECT * FROM SCHEMA.ValorCapacidad WHERE ACTIVO = 1 AND VALOR_NUMERICO IN (
+                           SELECT MIN(valor_numerico) from SCHEMA.ValorCapacidad WHERE ACTIVO = 1) "/>
+ </select>
+
+</entity>

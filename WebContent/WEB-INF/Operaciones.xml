@@ -1,0 +1,438 @@
+<?xml version="1.0" standalone="yes"?>
+<!DOCTYPE entity [
+  <!ELEMENT entity    (operacion*)>
+  <!ELEMENT operacion (dataset*, result*)>
+  <!ELEMENT dataset   (campo*)>
+  <!ELEMENT campo     EMPTY>
+  <!ELEMENT result    EMPTY>
+  
+  <!ATTLIST operacion name              ID    #REQUIRED>
+  <!ATTLIST operacion clase             CDATA #IMPLIED>
+  <!ATTLIST operacion XMLWriter         CDATA #IMPLIED>
+  <!ATTLIST operacion redirect          CDATA #IMPLIED>
+  <!ATTLIST operacion newSesion         CDATA #IMPLIED>
+  
+  <!ATTLIST dataset name                CDATA #REQUIRED>
+  <!ATTLIST dataset value               CDATA #IMPLIED>
+  <!ATTLIST dataset tabla               CDATA #IMPLIED>
+  
+  <!ATTLIST result name                 CDATA #REQUIRED>
+  <!ATTLIST result value                CDATA #IMPLIED>
+
+  <!ATTLIST campo   name                CDATA #REQUIRED>
+  <!ATTLIST campo   value               CDATA #IMPLIED>
+]>
+<entity>
+
+	<!-- VARIOS -->
+	<operacion name="VerPoolStatements" clase="com.jkt.framework.util.VerPoolStatements" />
+
+	<operacion name="MonitorearSesiones" clase="com.jkt.framework.util.MonitorearSesiones" />
+	
+	<operacion name="LogOut" clase="com.jkt.top150.seguridad.bm.op.LogOut">
+		<result name="0"  value="/jsp/close.jsp" />
+    </operacion>
+    
+	<operacion name="Login" clase="com.jkt.top150.seguridad.bm.op.OperLogin" newSesion="true">
+		<result name="0"  value="/jsp/index.jsp" />
+		<result name="-1" value="/jsp/Login.jsp" />
+    </operacion>
+
+	<operacion name="VerInbox" clase="com.jkt.top150.seguridad.bm.op.VerInbox">
+		<result name="0" value="/jsp/seguridad/inbox.jsp" />
+    </operacion>
+
+	<operacion name="VerEncabezado" clase="com.jkt.top150.seguridad.bm.op.VerEncabezado">
+		<result name="0" value="/jsp/encabezado.jsp" />
+    </operacion>
+
+    <operacion name="CambiarEjercicio" clase="com.jkt.top150.varios.bm.op.CambiarEjercicio">
+		<result name="1"  value="/FrontServlet?op=CargaObjetivos" />
+		<result name="2"  value="/FrontServlet?op=AvanceObjetivos" />
+		<result name="3"  value="/FrontServlet?op=CargarEvaluaciones" />
+		<result name="4"  value="/FrontServlet?op=ArmarGrafico" />
+     	<result name="5"  value="/FrontServlet?op=VerInbox" />
+     	<result name="6"  value="/FrontServlet?op=ConsultaObjetivos" />
+    </operacion>
+    
+    <operacion name="CargaUsuarios" clase="com.jkt.top150.seguridad.bm.op.CargaUsuarios">
+		<result name="0" value="/jsp/seguridad/usuarios.jsp" />
+    </operacion>
+    
+    <operacion name="SaveUsuarios" clase="com.jkt.top150.seguridad.bm.op.SaveUsuarios">
+		<result name="0" value="/FrontServlet?op=CargaUsuarios" />
+    </operacion>
+
+    <!-- CARGA DE OBJETIVOS -->
+	<operacion name="ShowLegajos" clase="com.jkt.top150.objetivos.bm.op.ShowLegajos" /><!-- NO TIENE RESULT PORQUE VIENE DE DELPHI-->
+	<operacion name="VistaPrevia" clase="com.jkt.top150.objetivos.bm.op.VistaPrevia" /><!-- NO TIENE RESULT PORQUE VIENE DE DELPHI-->
+
+	<operacion name="CargaObjetivos" clase="com.jkt.top150.objetivos.bm.op.CargaObjetivos">
+		<result name="0"  value="/jsp/core/cargaobjetivos.jsp" />
+		<result name="-1" value="/FrontServlet?op=VerPortada" />
+	</operacion>
+
+	<operacion name="SaveObjetivos" clase="com.jkt.top150.objetivos.bm.op.SaveObjetivos">
+		<result name="0"  value="/FrontServlet?op=CargaObjetivos" />
+		<result name="-1" value="/FrontServlet?op=CargaObjetivos" />
+		<result name="1"  value="/FrontServlet?op=VerInbox" />
+    </operacion>
+
+    <!-- AVANCE DE OBJETIVOS -->
+
+	<operacion name="AvanceObjetivos" clase="com.jkt.top150.objetivos.bm.op.AvanceObjetivos">
+		<result name="0"  value="/jsp/core/avanceObjetivos.jsp" />
+		<result name="10" value="/jsp/core/avanceObjetivosPrint.jsp" />
+    </operacion>
+    
+	<operacion name="InicioComparacionResumen" clase="com.jkt.top150.objetivos.bm.op.EvaluadorWriter">
+		<result name="0" value="/jsp/core/comparacionResultados.jsp" />
+    </operacion>
+    
+	<operacion name="ComparacionResumen" clase="com.jkt.top150.objetivos.bm.op.ComparacionResumen">
+		<result name="0" value="/jsp/core/comparacionResultados.jsp" />
+    </operacion>
+
+	<operacion name="InicioConsultaObjetivos" clase="com.jkt.top150.objetivos.bm.op.EvaluadorWriter">
+		<result name="0" value="/jsp/core/consultaObjetivosPrint.jsp" />
+    </operacion>
+    
+	<operacion name="ConsultaObjetivos" clase="com.jkt.top150.objetivos.bm.op.ConsultaObjetivos">
+		<result name="0" value="/jsp/core/consultaObjetivosPrint.jsp" />
+    </operacion>
+
+	<operacion name="InicioConsultaAvanceObjetivos" clase="com.jkt.top150.objetivos.bm.op.EvaluadorWriter">
+		<result name="0" value="/jsp/core/avanceEstadosPrint.jsp" />
+    </operacion>
+
+	<operacion name="ConsultaAvanceObjetivos" clase="com.jkt.top150.objetivos.bm.op.ConsultaAvanceObjetivos">
+		<result name="0" value="/jsp/core/avanceEstadosPrint.jsp" />
+    </operacion>
+
+	<operacion name="SaveAvanceObjetivos" clase="com.jkt.top150.objetivos.bm.op.SaveAvanceObjetivos">
+		<result name="-1" value="/FrontServlet?op=AvanceObjetivos" />
+		<result name="0"  value="/FrontServlet?op=AvanceObjetivos" />
+		<result name="1"  value="/FrontServlet?op=CargarEvaluaciones" />
+    </operacion>
+    
+	<operacion name="VerComentarios" clase="com.jkt.top150.varios.bm.DummyOper">
+		<result name="0" value="/jsp/util/showComentario.jsp" />
+    </operacion>
+    
+	<operacion name="ShowEstadosEvaluados" clase="com.jkt.top150.objetivos.bm.op.ShowEstadosEvaluados">
+		<result name="0" value="/jsp/core/showEstadosEvaluados.jsp" />
+    </operacion>
+    
+	<operacion name="SaveEstadosEvaluados" clase="com.jkt.top150.objetivos.bm.op.SaveEstadosEvaluados">
+		<result name="0"  value="/FrontServlet?op=ShowEstadosEvaluados" />
+    </operacion>
+
+    <!-- CARGA DE EVALUACIONES -->
+    
+	<operacion name="CargarEvaluaciones" clase="com.jkt.top150.capacidades.bm.op.CargarEvaluaciones">
+		<result name="0"  value="/jsp/core/competencias.jsp" />
+		<result name="-1" value="/FrontServlet?op=VerInbox" />
+    </operacion>
+
+	<operacion name="SaveEvaluaciones" clase="com.jkt.top150.capacidades.bm.op.SaveEvaluaciones">
+		<result name="-1" value="/FrontServlet?op=CargarEvaluaciones" />
+		<result name="0"  value="/FrontServlet?op=CargarEvaluaciones" />
+		<result name="1"  value="/FrontServlet?op=ArmarGrafico" />
+    </operacion>
+    
+	<operacion name="ArmarGrafico" clase="com.jkt.top150.varios.bm.op.ArmarGrafico">
+		<result name="0"  value="/jsp/core/chart.jsp" />
+		<result name="-1" value="/FrontServlet?op=VerInbox" />
+    </operacion>
+
+	<operacion name="SaveLegajoVarios" clase="com.jkt.top150.varios.bm.op.SaveLegajoVarios">
+		<result name="-1" value="/FrontServlet?op=ArmarGrafico" />
+		<result name="0"  value="/FrontServlet?op=ArmarGrafico" />
+    </operacion>
+
+    <!-- PAISES -->
+
+	<operacion name="SavePaises" clase="com.jkt.top150.configuracion.bm.op.SavePaises">
+		<result name="0"  value="/FrontServlet?op=CargarPaises" />
+    </operacion>
+
+	<operacion name="CargarPaises" clase="com.jkt.top150.varios.bm.op.TraerGenerico">
+
+		<dataset name="Pais" value="3" tabla="Paises">
+			<campo name="oid"         value="OID" />
+			<campo name="codigo"      value="codigo" />
+			<campo name="descripcion" value="descripcion" />
+			<campo name="activo"      value="isActivo" />
+		</dataset>
+		
+		<result name="0"  value="/jsp/configuracion/paises.jsp" />
+
+	</operacion>
+
+    <!--  DIMENSIONES -->
+    
+	<operacion name="CargarGrupoObjetivo" clase="com.jkt.top150.varios.bm.op.TraerGenerico">
+
+		<dataset name="GrupoObjetivo" value="3" tabla="GrupoObjetivo">
+			<campo name="oid"         value="OID" />
+			<campo name="codigo"      value="codigo" />
+			<campo name="descripcion" value="descripcion" />
+			<campo name="orden"       value="orden" />
+			<campo name="es_reto"     value="isReto" />
+			<campo name="activo"      value="isActivo" />
+		</dataset>
+		
+		<result name="0"  value="/jsp/configuracion/grupoObjetivo.jsp" />
+
+	</operacion>
+
+	<operacion name="SaveGrupoObjetivo" clase="com.jkt.top150.objetivos.bm.op.SaveGrupoObjetivo">
+		<result name="0"  value="/FrontServlet?op=CargarGrupoObjetivo" />
+    </operacion>
+    
+	<operacion name="SaveCuantificadores" clase="com.jkt.top150.objetivos.bm.op.SaveCuantificadores">
+		<result name="0"  value="/FrontServlet?op=ShowDetallesDimension" />
+    </operacion>
+    
+	<operacion name="ShowDetallesDimension" clase="com.jkt.top150.varios.bm.op.TraerGenerico">
+
+		<dataset name="Cuantificador" value="3" tabla="Cuantificadores">
+			<campo name="oid"         value="OID" />
+			<campo name="codigo"      value="codigo" />
+			<campo name="descripcion" value="descripcion" />
+			<campo name="activo"      value="isActivo" />
+		</dataset>
+		
+		<result name="0"  value="/jsp/configuracion/cuantificadores.jsp" />
+
+	</operacion>
+
+    <!-- ENTIDADES -->
+    
+	<operacion name="CargarEntidades" clase="com.jkt.top150.varios.bm.op.TraerGenerico">
+
+		<dataset name="Entidad" value="3" tabla="Entidades">
+			<campo name="oid"         value="OID" />
+			<campo name="codigo"      value="codigo" />
+			<campo name="descripcion" value="descripcion" />
+			<campo name="activo"      value="isActivo" />
+		</dataset>
+		
+		<result name="0"  value="/jsp/configuracion/entidades.jsp" />
+
+	</operacion>
+	
+	<operacion name="SaveEntidades" clase="com.jkt.top150.configuracion.bm.op.SaveEntidades">
+		<result name="0"  value="/FrontServlet?op=CargarEntidades" />
+    </operacion>
+    
+    <!-- CAPACIDADES -->
+    
+	<operacion name="CargarCapacidades" clase="com.jkt.top150.varios.bm.op.TraerGenerico">
+
+		<dataset name="Capacidad" value="3" tabla="Capacidades">
+			<campo name="oid"         value="OID" />
+			<campo name="codigo"      value="codigo" />
+			<campo name="descripcion" value="descripcion" />
+			<campo name="activo"      value="isActivo" />
+		</dataset>
+		
+		<result name="0"  value="/jsp/configuracion/capacidades.jsp" />
+
+	</operacion>
+	
+	<operacion name="SaveCapacidades" clase="com.jkt.top150.capacidades.bm.op.SaveCapacidades">
+		<result name="0"  value="/FrontServlet?op=CargarCapacidades" />
+    </operacion>
+    
+	<operacion name="ShowFactores" clase="com.jkt.top150.varios.bm.op.TraerGenerico">
+
+		<dataset name="Factor" value="3" tabla="Factores">
+			<campo name="oid"         value="OID" />
+			<campo name="codigo"      value="codigo" />
+			<campo name="descripcion" value="descripcion" />
+			<campo name="activo"      value="isActivo" />
+		</dataset>
+		
+		<result name="0"  value="/jsp/configuracion/factores.jsp" />
+
+	</operacion>
+	
+	<operacion name="SaveFactores" clase="com.jkt.top150.capacidades.bm.op.SaveFactores">
+		<result name="0"  value="/FrontServlet?op=ShowFactores" />
+    </operacion>
+
+    <!-- VALORES DE CAPACIDAD -->
+
+	<operacion name="CargarValoresCapacidad" clase="com.jkt.top150.varios.bm.op.TraerGenerico">
+
+		<dataset name="ValorCapacidad" value="4" tabla="ValoresCapacidad">
+			<campo name="oid"               value="OID" />
+			<campo name="codigo"            value="codigo" />
+			<campo name="descripcion"       value="descripcion" />
+			<campo name="desc_ext"          value="descExtendida" />
+			<campo name="valorNumerico"     value="valorNumerico" />
+			<campo name="valoracion_global" value="isValoracionGlobal" />
+			<campo name="activo"            value="isActivo" />
+		</dataset>
+		
+		<result name="0"  value="/jsp/configuracion/valorCapacidad.jsp" />
+
+	</operacion>
+	
+	<operacion name="SaveValorCapacidad" clase="com.jkt.top150.capacidades.bm.op.SaveValorCapacidad">
+		<result name="0"  value="/FrontServlet?op=CargarValoresCapacidad" />
+	</operacion>
+
+    <!-- VALORES DE RESUMEN -->
+
+	<operacion name="CargarValoresResumen" clase="com.jkt.top150.varios.bm.op.TraerGenerico">
+
+		<dataset name="ValorResumen" value="4" tabla="ValorResumen">
+			<campo name="oid"               value="OID" />
+			<campo name="codigo"            value="codigo" />
+			<campo name="descripcion"       value="descripcion" />
+			<campo name="desc_ext"          value="descExtendida" />
+			<campo name="valorNumerico"     value="valorNumerico" />
+			<campo name="activo"            value="isActivo" />
+		</dataset>
+		
+		<result name="0"  value="/jsp/configuracion/valorResumen.jsp" />
+
+	</operacion>
+	
+	<operacion name="SaveValorResumen" clase="com.jkt.top150.capacidades.bm.op.SaveValorResumen">
+		<result name="0"  value="/FrontServlet?op=CargarValoresResumen" />
+	</operacion>
+
+    <!-- VALORES DE CUMPLIENTO -->
+
+	<operacion name="CargarValCumpl" clase="com.jkt.top150.varios.bm.op.TraerGenerico">
+
+		<dataset name="ValCumpGlobal" value="3" tabla="ValCumpGlobal">
+			<campo name="oid"           value="OID" />
+			<campo name="codigo"        value="codigo" />
+			<campo name="descripcion"   value="descripcion" />
+			<campo name="desc_ext"      value="descExtendida" />
+			<campo name="valorNumerico" value="valorNumerico" />
+			<campo name="ponderador"    value="ponderador" />
+			<campo name="activo"        value="isActivo" />
+		</dataset>
+		
+		<result name="0"  value="/jsp/configuracion/valorCumplimiento.jsp" />
+
+	</operacion>
+
+	<operacion name="SaveValorCumplimiento" clase="com.jkt.top150.objetivos.bm.op.SaveValorCumplimiento">
+		<result name="0"  value="/FrontServlet?op=CargarValCumpl" />
+    </operacion>
+
+    <!-- EJERCICIOS - ETAPAS -->
+    
+	<operacion name="SaveEjercicios" clase="com.jkt.top150.varios.bm.op.SaveEjercicios">
+		<result name="0"  value="/FrontServlet?op=ShowEtapasEjercicio" />
+    </operacion>
+    
+	<operacion name="VerDatosCopia" clase="com.jkt.top150.varios.bm.DummyOper">
+		<result name="0" value="/jsp/util/copiaConfig.jsp" />
+    </operacion>
+
+	<operacion name="SaveConfigIni" clase="com.jkt.top150.varios.bm.op.SaveConfigIni">
+		<result name="0"  value="/FrontServlet?op=VerDatosCopia" />
+        <result name="-1" value="/FrontServlet?op=VerDatosCopia" />
+    </operacion>
+
+	<operacion name="ShowEtapasEjercicio" clase="com.jkt.top150.varios.bm.op.ShowEtapasEjercicio">
+  		<result name="0" value="/jsp/configuracion/ejercicios.jsp" />
+	</operacion>
+	
+	<operacion name="CargarEtapas" clase="com.jkt.top150.varios.bm.op.TraerGenerico">
+
+		<dataset name="Etapa" value="3" tabla="Etapas">
+			<campo name="oid"           value="OID" />
+			<campo name="codigo"        value="codigo" />
+			<campo name="descripcion"   value="descripcion" />
+			<campo name="periodo"       value="periodo" />
+			<campo name="activo"        value="isActivo" />
+			<campo name="carga_obj"     value="isCargaObjetivo" />
+			<campo name="carga_cumpl"   value="isCargaCumplimiento" />
+			<campo name="evalua_capa"   value="isEvaluaCapacidades" />
+			<campo name="carga_resu"    value="isCargaResumen" />
+			<campo name="calcula_res"   value="isCalculaResultado" />
+		</dataset>
+		
+		<result name="0"  value="/jsp/configuracion/etapas.jsp" />
+
+	</operacion>
+
+	<operacion name="SaveEtapa" clase="com.jkt.top150.objetivos.bm.op.SaveEtapa">
+		<result name="0"  value="/FrontServlet?op=CargarEtapas" />
+    </operacion>
+
+    <!-- INTERFACES -->
+
+	<operacion name="VerRolLegajos" clase="com.jkt.top150.legajos.bm.op.VerRolLegajos">
+		<result name="0" value="/jsp/configuracion/evaluacionLegajos.jsp" />
+    </operacion>
+    
+	<operacion name="SaveRolLegajos" clase="com.jkt.top150.legajos.bm.op.SaveRolLegajos">
+		<result name="0" value="/FrontServlet?op=VerRolLegajos" />
+    </operacion>
+
+	<operacion name="CargarLegajos" clase="com.jkt.top150.varios.bm.DummyOper">
+		<result name="0" value="/jsp/configuracion/cargarLegajos.jsp" />
+    </operacion>
+    
+	<operacion name="MostrarLegajosBUP" clase="com.jkt.top150.interfaces.bm.op.MostrarLegajosBUP">
+		<result name="0" value="/jsp/configuracion/cargarLegajos.jsp" />
+    </operacion>
+    
+	<operacion name="SaveLegajos" clase="com.jkt.top150.interfaces.bm.op.SaveLegajos">
+		<result name="0" value="/FrontServlet?op=CargarLegajos" />
+    </operacion>
+
+	<operacion name="VerEvaluadores" clase="com.jkt.top150.legajos.bm.op.VerEvaluadores">
+		<result name="0"  value="/jsp/configuracion/mostrarEvaluadores.jsp" />
+    </operacion>
+
+	<operacion name="VerPortada" clase="com.jkt.top150.varios.bm.DummyOper">
+		<result name="0" value="/jsp/seguridad/portada.jsp" />
+    </operacion>
+
+	<operacion name="SaveEvaluador" clase="com.jkt.top150.legajos.bm.op.SaveEvaluador">
+		<result name="0" value="/FrontServlet?op=VerPortada" />
+    </operacion>
+    
+	<operacion name="TraerLegajosAnio" clase="com.jkt.top150.legajos.bm.op.TraerLegajosAnio">
+		<result name="0" value="/jsp/configuracion/jerarquia.jsp" />
+    </operacion>
+    
+	<operacion name="TraerLegajosAnioJefe" clase="com.jkt.top150.legajos.bm.op.TraerLegajosAnio">
+		<result name="0" value="/jsp/configuracion/mostrarLegajos.jsp" />
+    </operacion>
+    
+	<operacion name="SaveJefe" clase="com.jkt.top150.legajos.bm.op.SaveJefe">
+		<result name="0" value="/jsp/configuracion/mostrarLegajos.jsp" />
+    </operacion>
+
+    <!-- CONCEPTOS VARIOS -->
+
+	<operacion name="CargarConceptosVarios" clase="com.jkt.top150.varios.bm.op.TraerGenerico">
+
+		<dataset name="ConcVarios" value="3" tabla="Conceptos">
+			<campo name="oid"           value="OID" />
+			<campo name="codigo"        value="codigo" />
+			<campo name="descripcion"   value="descripcion" />
+			<campo name="tipo"          value="tipo" />
+			<campo name="activo"        value="isActivo" />
+		</dataset>
+		
+		<result name="0"  value="/jsp/configuracion/conceptos.jsp" />
+
+	</operacion>
+	
+	<operacion name="SaveConceptos" clase="com.jkt.top150.varios.bm.op.SaveConceptos">
+		<result name="0" value="/FrontServlet?op=CargarConceptosVarios" />
+    </operacion>
+    
+</entity>

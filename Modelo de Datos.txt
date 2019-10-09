@@ -1,0 +1,260 @@
+CREATE TABLE capacidad
+ (oid_cap integer not null primary key,
+  codigo varchar2(20),
+  descripcion varchar2(100),
+  orden smallint,
+  activo smallint);
+
+ CREATE TABLE EVALCAPACIDAD
+               (oid_eval_cap integer not null primary key,
+ 		oid_leg_eje integer ,
+ 		oid_etapa integer , 
+		oid_cap integer , oid_val_cap integer ,
+ 		oid_usu integer,
+ 		fec_proceso DATE);
+
+
+ CREATE TABLE EvalCapacGlobal
+               (oid_eval_glo integer not null primary key,
+ 		oid_leg_eje integer, 
+		oid_etapa integer,  
+		oid_val_cap integer, 
+		oid_usu integer,
+		fec_proceso  DATE);
+
+CREATE TABLE EvalFactores
+               (oid_eval_fac integer not null primary key,
+ 		oid_leg_eje integer,
+		oid_etapa integer,
+ 		oid_fac integer,
+ 		oid_val_cap integer,
+ 		oid_usu integer,
+ 		fec_proceso  DATE);
+
+
+CREATE TABLE EvalResGlobal
+               (oid_eval_res integer not null primary key,
+ 		oid_leg_eje integer,
+ 		oid_etapa integer,
+ 		oid_val_res integer,
+ 		oid_usu integer,
+ 		fec_proceso DATE);
+
+
+CREATE TABLE factores
+               (oid_fac integer not null primary key,
+ 		codigo varchar2(20),
+		descripcion varchar2(100),
+		oid_cap integer,
+		orden smallint,
+		activo smallint);
+           
+
+CREATE TABLE ValorCapacidad
+               (oid_val_cap integer not null primary key,
+ 		codigo varchar2(20),
+		descripcion varchar2(100),
+		orden smallint,
+		valor_numerico decimal(12,2),
+		activo smallint,
+ 		desc_ext  varchar2(100), 
+		valoracion_global smallint);
+
+
+
+CREATE TABLE ValorResumen
+               (OID_VAL_RES integer not null primary key,
+ 		codigo varchar2(20),
+		descripcion varchar2(100),
+		orden smallint,
+		valor_numerico  decimal(12,2),
+		activo smallint,
+ 		desc_ext varchar2(100));
+
+
+CREATE TABLE ENTIDADES
+               (oid_ent integer not null primary key,
+ 		codigo varchar2(20),
+		razon varchar2(100),
+		activo smallint);
+
+
+CREATE TABLE Estructura
+               (oid_est integer not null primary key,
+ 		oid_ent integer,
+		codigo varchar2(20),
+		descripcion varchar2(100),
+		nivel smallint,
+		activo smallint,
+		oid_est_padre integer);
+
+
+CREATE TABLE Pais
+               (oid_pais integer not null primary key,
+ 		codigo varchar2(20),
+		descripcion varchar2(100),
+		activo smallint);
+                
+
+CREATE TABLE Legajo
+               (oid_leg integer not null primary key,
+ 		oid_usu_legajo integer,
+		legajo varchar2(20),
+		apellido_pat varchar2(100),
+		apellido_mat varchar2(100),
+		nombres varchar2(100),
+		fec_nac  DATE,
+		nacionalidad varchar2(100),
+		sexo varchar2(10),
+		mail varchar2(100),
+		activo smallint,
+		oid_usu integer,
+		fec_proceso DATE);
+
+
+CREATE TABLE CUANTIFICACION
+               (oid_cuan integer not null primary key,
+ 		oid_obj integer,
+		oid_cuantif integer,
+		cuantificacion varchar2(100),
+		oid_usu integer,
+		fec_proceso DATE,
+ 		orden smallint);
+
+
+CREATE TABLE Cuantificador
+               (oid_cuantif integer not null primary key,
+ 		codigo varchar2(20),
+		descripcion varchar2(100),
+		oid_grupo integer,
+		orden smallint,
+		activo smallint);
+
+
+
+CREATE TABLE Cumplimiento
+               (oid_cump integer not null primary key,
+ 		oid_obj integer,
+		oid_etapa integer,
+		porc decimal(5,2),
+		comen varchar2(100),
+		resultado varchar2(100),
+		oid_usu integer,
+		fec_proceso DATE);
+
+
+CREATE TABLE CUMPGLOBAL
+               (oid_cump_glob integer not null primary key,
+ 		oid_leg_eje integer,
+		oid_etapa integer,
+		oid_val_cump integer,
+		valor decimal(12,2),
+		oid_usu integer,
+		fec_proceso DATE,
+ 		comentario varchar2(100));
+
+
+
+CREATE TABLE Ejercicio (oid_eje integer not null primary key,
+ 			actual smallint,
+			anio integer);
+
+CREATE TABLE EjercicioEtapas
+               (oid_eje_etapa integer not null primary key,
+ 		oid_eje integer,
+		oid_etapa integer,
+		estado varchar2(10),
+		fec_proceso DATE,
+		oid_usu integer);
+
+
+CREATE TABLE GrupoConcVarios
+               (oid_grupo integer not null primary key,
+ 		codigo varchar2(20),
+		descripcion varchar2(100),
+		orden smallint,
+		activo smallint);
+
+
+CREATE TABLE LEGAJOIDIOMA
+               (oid_leg_idio integer not null primary key,
+ 		oid_leg_eje integer,
+		orden smallint,
+		idioma varchar2(100),
+		oid_nivel integer);
+                
+
+CREATE TABLE Legajovarios
+               (oid_leg_pot integer not null primary key,
+ 		oid_leg_eje integer,
+		oid_conc integer,
+		oid_val_conc integer,
+		secu smallint,
+		texto varchar2(100),
+		monto decimal(12,2));
+
+
+CREATE TABLE NIVELIDIOMA
+               (oid_nivel integer not null primary key,
+ 		codigo varchar2(20),
+		descripcion varchar2(100),
+		activo smallint);
+
+
+CREATE TABLE ValConcVarios
+               (oid_val_conc integer not null primary key,
+ 		oid_conc integer,
+		codigo varchar2(20),
+		descripcion varchar2(100),
+		activo smallint);
+
+
+CREATE TABLE jkUsuario 
+              (oid_usuario int primary key not null,
+               codigo  varchar2(40),
+               apellido varchar2(50),
+               nombres varchar2(50),
+               passwd varchar2(50), 
+               mail varchar2(50),
+               oid_usu int,
+               activo smallint,
+               usuario_rrhh smallint,
+               usuario_planeamiento smallint,
+               usuario_config smallint);
+
+
+CREATE TABLE jkEmpresa( 
+    oid_empresa  int PRIMARY KEY NOT NULL,
+    codigo  varchar2(30),
+    razon    varchar2(80),
+    esquemadb   varchar2(30),
+    oid_us  int,
+    fhproceso DATE,
+    activo SMALLINT
+   );
+
+CREATE TABLE Etapa(
+    oid_etapa int primary key not null,
+    codigo varchar2(20),
+    descripcion varchar2(100),
+    periodo varchar2(50),
+    carga_obj smallint,
+    calcula_res smallint,
+    evalua_capa smallint,
+    carga_cumpl smallint,
+    carga_resumen smallint,
+    activo smallint);
+
+
+CREATE TABLE LegajoEjer
+               (OID_LEG_EJE,OID_LEG,OID_EJE,ES_EVALUADO,ES_EVALUADOR,OID_EVALUADOR,OID_USU,FEC_PROCESO)
+                
+ 
+
+
+
+
+
+
+     
+

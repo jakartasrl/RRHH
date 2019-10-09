@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+
+<entity>
+   <resources>
+     <path value="/WEB-INF/Resource.xml" />
+   </resources>
+
+   <persistentes>
+     <path value="lib/config/FrameworkPersistence.xml" />
+     <path value="lib/config/SeguridadPersistence.xml" />
+     <path value="/WEB-INF/Persistence.xml" />
+   </persistentes>
+
+   <operaciones>
+     <path value="lib/config/FrameworkOperaciones.xml" />
+     <path value="lib/config/SeguridadOperaciones.xml" />
+     <path value="/WEB-INF/Operaciones.xml" />
+   </operaciones>
+
+</entity>

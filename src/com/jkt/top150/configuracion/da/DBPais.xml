@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<entity name="Queries">
+
+ <insert>
+  <query value="INSERT INTO SCHEMA.Pais
+               (oid_pais,codigo,descripcion,activo)
+                VALUES (?,?,?,1)" />
+
+  <param index="1" value="OID"/>
+  <param index="2" value="codigo"/>
+  <param index="3" value="descripcion"/>
+ </insert>
+
+ <update>
+  <query value="UPDATE SCHEMA.Pais SET 
+                codigo = ?, descripcion = ?, activo = 1 
+                WHERE OID_PAIS = ? " />
+
+  <param index="1" value="codigo"/>
+  <param index="2" value="descripcion"/>
+  <param index="3" value="OID"/>
+ </update>
+
+ <delete>
+  <query value="UPDATE SCHEMA.Pais SET ACTIVO = 0 WHERE OID_PAIS = ? " />
+  <param index="1" value="OID"/>
+ </delete>
+
+ <select>
+   <query name="1" value="SELECT * FROM SCHEMA.Pais WHERE OID_PAIS = ?"/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="2" value="SELECT * FROM SCHEMA.Pais WHERE CODIGO = ?"/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="3" value="SELECT * FROM SCHEMA.Pais "/>
+ </select>
+
+</entity>

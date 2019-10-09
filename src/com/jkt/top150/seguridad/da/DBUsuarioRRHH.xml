@@ -1,0 +1,68 @@
+<?xml version="1.0" standalone="yes"?>
+<entity name="Queries">
+
+ <insert>
+  <query value="INSERT INTO SCHEMA.jkUsuario (oid_usuario, codigo, apellido, nombres, passwd, mail, oid_usu, activo, usuario_rrhh, usuario_planeamiento, usuario_config)
+                VALUES (?,?,?,?,?,?,?,1,?,?,?)" />
+
+  <param index="1" value="OID"/>
+  <param index="2" value="codigo"/>
+  <param index="3" value="apellido"/>
+  <param index="4" value="nombres"/>
+  <param index="5" value="password"/>
+  <param index="6" value="mail"/>  
+  <param index="7" value="usuAlta.OID"/>  
+  <param index="8" value="isRRHH"/>  
+  <param index="9" value="isPlanificacion"/>  
+  <param index="10" value="isConfigurador"/>  
+ </insert>
+
+ <update>
+  <query value="UPDATE SCHEMA.jkUsuario 
+                   SET USUARIO_RRHH         = ?, 
+                       USUARIO_PLANEAMIENTO = ?, 
+                       USUARIO_CONFIG       = ?, 
+                       OID_USU              = ?,
+                       APELLIDO             = ?,
+                       NOMBRES              = ?, 
+                       CODIGO               = ?,
+                       ACTIVO               = 1
+                 WHERE OID_USUARIO = ? " />
+                 
+  <param index="1" value="isRRHH"/>
+  <param index="2" value="isPlanificacion"/>
+  <param index="3" value="isConfigurador"/>
+  <param index="4" value="usuAlta.OID"/>
+  <param index="5" value="apellido"/>
+  <param index="6" value="nombres"/>
+  <param index="7" value="codigo"/>
+  <param index="8" value="OID"/>
+ </update>
+
+ <delete>
+  <query value="UPDATE SCHEMA.jkUsuario SET ACTIVO = 0 WHERE OID_USUARIO = ? " />
+                 
+  <param index="1" value="OID"/>
+ </delete>
+
+ <select>
+   <query name="1" value="SELECT * FROM SCHEMA.jkUsuario WHERE OID_USUARIO = ?"/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="2" value="SELECT * FROM SCHEMA.jkUsuario WHERE CODIGO = ?"/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="3" value="SELECT * FROM SCHEMA.jkUsuario ORDER BY apellido "/>
+ </select>
+ 
+ <select>
+   <query name="20" value="SELECT * FROM SCHEMA.jkUsuario 
+                            WHERE UPPER(codigo) = UPPER(?) "/>
+   <param index="1"/>
+ </select>
+ 
+</entity>

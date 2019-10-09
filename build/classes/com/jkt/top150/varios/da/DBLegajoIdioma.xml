@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="yes"?>
+<entity name="Queries">
+
+ <insert>
+  <query value="INSERT INTO SCHEMA.LEGAJOIDIOMA
+               (oid_leg_idio,oid_leg_eje,orden,idioma,oid_nivel)
+                VALUES (?,?,?,?,?)" />
+
+  <param index="1" value="OID"/>
+  <param index="2" value="legajoEjer.OID"/>
+  <param index="3" value="orden"/>
+  <param index="4" value="idioma"/>
+  <param index="5" value="nivelIdioma.OID"/>
+ </insert>
+
+ <update>
+  <query value="UPDATE SCHEMA.LEGAJOIDIOMA SET 
+                oid_leg_eje = ?, orden = ?, idioma = ?, oid_nivel = ? 
+                WHERE OID_LEG_IDIO = ? " />
+
+  <param index="1" value="legajoEjer.OID"/>
+  <param index="2" value="orden"/>
+  <param index="3" value="idioma"/>
+  <param index="4" value="nivelIdioma.OID"/>
+  <param index="5" value="OID"/>
+ </update>
+
+ <delete>
+  <query value="DELETE FROM SCHEMA.LEGAJOIDIOMA
+                WHERE OID_LEG_IDIO = ? " />
+
+  <param index="1" value="OID"/>
+ </delete>
+
+ <select>
+   <query name="1" value="SELECT * FROM SCHEMA.LEGAJOIDIOMA "/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="2" value="SELECT * FROM SCHEMA.LEGAJOIDIOMA "/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="3" value="SELECT * FROM SCHEMA.LEGAJOIDIOMA "/>
+   <param index="1"/>
+ </select>
+
+</entity>

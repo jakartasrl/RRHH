@@ -1,0 +1,43 @@
+<?xml version="1.0" standalone="yes"?>
+<entity name="Queries">
+
+ <insert>
+  <query value="INSERT INTO SCHEMA.ENTIDADES
+               (oid_ent,codigo,razon,activo)
+                VALUES (?,?,?,1)" />
+
+  <param index="1" value="OID"/>
+  <param index="2" value="codigo"/>
+  <param index="3" value="descripcion"/>
+ </insert>
+
+ <update>
+  <query value="UPDATE SCHEMA.ENTIDADES SET 
+                codigo = ?, razon = ?, activo = 1 
+                WHERE OID_ENT = ? " />
+
+  <param index="1" value="codigo"/>
+  <param index="2" value="descripcion"/>
+  <param index="3" value="OID"/>
+ </update>
+
+ <delete>
+  <query value="UPDATE SCHEMA.ENTIDADES SET ACTIVO = 0 WHERE OID_ENT = ? " />
+  <param index="1" value="OID"/>
+ </delete>
+
+ <select>
+   <query name="1" value="SELECT * FROM SCHEMA.ENTIDADES WHERE OID_ENT = ?"/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="2" value="SELECT * FROM SCHEMA.ENTIDADES WHERE CODIGO = ?"/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="3" value="SELECT * FROM SCHEMA.ENTIDADES "/>
+ </select>
+
+</entity>

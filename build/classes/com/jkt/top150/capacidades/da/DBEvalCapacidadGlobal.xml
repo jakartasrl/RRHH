@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="yes"?>
+<entity name="Queries">
+
+ <insert>
+  <query value="INSERT INTO SCHEMA.EvalCapacGlobal
+               (oid_eval_glo,oid_leg_eje, oid_etapa, oid_val_cap, oid_usu, fec_proceso)
+                VALUES (?,?,?,?,?,?)" />
+
+  <param index="1" value="OID"/>
+  <param index="2" value="legajo.OID"/>
+  <param index="3" value="etapa.OID"/>
+  <param index="4" value="valor.OID"/>
+  <param index="5" value="usuario.OID"/>
+  <param index="6" value="fecProceso"/>
+ </insert>
+
+ <update>
+  <query value="UPDATE SCHEMA.EvalCapacGlobal SET OID_VAL_CAP = ? WHERE OID_EVAL_GLO = ? " />
+  <param index="1" value="valor.OID"/>
+  <param index="2" value="OID"/>
+ </update>
+
+ <select>
+   <query name="1" value="SELECT * FROM SCHEMA.EvalCapacGlobal WHERE OID_EVAL_CAP = ? "/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="2" value="SELECT * FROM SCHEMA.EvalCapacGlobal
+                           WHERE OID_LEG_EJE = ?
+                             AND OID_ETAPA = ? "/>
+   <param index="1" key="Legajo"    value="OID"/>
+   <param index="2" key="Etapa"     value="OID"/>
+ </select>
+
+</entity>

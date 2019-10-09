@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="yes"?>
+
+<entity name="Errores">
+
+	<error name="100" value="Se quiso asignar un objeto XXX en null." />
+	<error name="101" value="Debe ingresar un valor mayor a 0 para XXX." />
+	<error name="102" value="Campo XXX vacio." />
+	<error name="103" value="Codigo XXX ya existente." />
+	<error name="104" value="Codigo XXX inexistente." />
+	<error name="105" value="Se produjo un error durante la validacion de XXX." />
+	<error name="106" value="Debe ingresar un valor mayor o igual a 0 para XXX." />
+	<error name="107" value="El campo XXX debe estar comprendido entre 0 y 100." />
+
+</entity>

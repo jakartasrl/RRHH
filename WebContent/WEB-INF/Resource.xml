@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="yes"?>
+
+<entity name="Resources">
+
+	<param name="initIdentity" value="1500" />
+	<param name="validarParametros" value="false" />
+
+	<param name="DEFAULT_MAKER" descripcion="com.jkt.framework.util.XMLTableMaker" />
+	<param name="STREAM_MAKER" descripcion="com.jkt.framework.patterns.writers.XMLStreamMaker" />
+	<param name="TDATASET_MAKER" descripcion="com.jkt.framework.patterns.writers.TDataSetMaker" />
+
+</entity>

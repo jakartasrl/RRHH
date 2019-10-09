@@ -1,0 +1,36 @@
+<?xml version="1.0" standalone="yes"?>
+<entity>
+
+ <insert>
+  <query value="INSERT INTO SCHEMA.Ejercicio (oid_eje,actual,anio) VALUES (?,?,?)" />
+  <param index="1" value="OID"/>
+  <param index="2" value="isActual"/>
+  <param index="3" value="anio"/>
+ </insert>
+
+ <update>
+  <query value="UPDATE SCHEMA.Ejercicio SET anio = ?, actual = ? WHERE OID_EJE = ? " />
+  <param index="1" value="anio"/>
+  <param index="2" value="isActual"/>
+  <param index="3" value="OID"/>
+ </update>
+
+ <select>
+   <query name="1" value="SELECT * FROM SCHEMA.Ejercicio WHERE OID_EJE = ?"/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="2" value="SELECT * FROM SCHEMA.Ejercicio WHERE ANIO = ?"/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="3" value="SELECT * FROM SCHEMA.Ejercicio ORDER BY ANIO"/>
+ </select>
+ 
+  <select>
+   <query name="10" value="SELECT * FROM SCHEMA.Ejercicio WHERE ACTUAL = 1 "/>
+  </select>
+
+</entity>

@@ -1,0 +1,54 @@
+<?xml version="1.0" standalone="yes"?>
+<entity name="Queries">
+
+ <insert>
+  <query value="INSERT INTO SCHEMA.Estructura
+               (oid_est,oid_ent,codigo,descripcion,nivel,activo,oid_est_padre)
+                VALUES (?,?,?,?,?,?,?)" />
+
+  <param index="1" value="OID"/>
+  <param index="2" value="entidad.OID"/>
+  <param index="3" value="codigo"/>
+  <param index="4" value="descripcon"/>
+  <param index="5" value="nivel"/>
+  <param index="6" value="activo"/>
+  <param index="7" value="padre.OID"/>
+ </insert>
+
+ <update>
+  <query value="UPDATE SCHEMA.Estructura SET 
+                oid_ent = ?, codigo = ?, descripcion = ?, nivel = ?, activo = ?, oid_est_padre = ? 
+                WHERE OID_EST = ? " />
+
+  <param index="1" value="entidad.OID"/>
+  <param index="2" value="codigo"/>
+  <param index="3" value="descripcon"/>
+  <param index="4" value="nivel"/>
+  <param index="5" value="activo"/>
+  <param index="6" value="padre.OID"/>
+  <param index="7" value="OID"/>
+ </update>
+
+ <delete>
+  <query value="DELETE FROM SCHEMA.Estructura
+                WHERE OID_EST = ? " />
+
+  <param index="1" value="OID"/>
+ </delete>
+
+ <select>
+   <query name="1" value="SELECT * FROM SCHEMA.Estructura "/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="2" value="SELECT * FROM SCHEMA.Estructura "/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="3" value="SELECT * FROM SCHEMA.Estructura "/>
+   <param index="1"/>
+ </select>
+
+</entity>

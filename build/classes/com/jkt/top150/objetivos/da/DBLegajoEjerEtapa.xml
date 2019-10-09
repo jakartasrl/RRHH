@@ -1,0 +1,58 @@
+<?xml version="1.0" standalone="yes"?>
+<entity name="Queries">
+
+ <insert>
+  <query value="INSERT INTO SCHEMA.LegajoEjerEtapa
+               (OID_LEG_EJE_ETAP,OID_LEG_EJE,OID_EJE_ETAPA, 
+                EST_EVALUADO_C_OBJ, EST_EVALUADOR_C_OBJ, EST_PLANEAMIENTO_C_OBJ, EST_EVALUADO_CUMPL, EST_EVALUADOR_CUMPL, EST_PLANEAMIENTO_CUMPL, EST_EVALUADO_CAPAC, EST_EVALUADOR_CAPAC, EST_PLANEAMIENTO_CAPAC)
+                VALUES (?,?,?,?,?,?,?,?,?,?,?,?)" />
+
+  <param index="1" value="OID"/>
+  <param index="2" value="legajoEjer.OID"/>
+  <param index="3" value="ejerEtapa.OID"/>
+
+  <param index="4"  value="estadoEvaluadoCargaObj"/>
+  <param index="5"  value="estadoEvaluadorCargaObj"/>
+  <param index="6"  value="estadoPlaneamientoCargaObj"/>
+  <param index="7"  value="estadoEvaluadoCumplimientos"/>
+  <param index="8"  value="estadoEvaluadorCumplimientos"/>
+  <param index="9"  value="estadoPlaneamientoCumplimientos"/>
+  <param index="10" value="estadoEvaluadoCapacidades"/>
+  <param index="11" value="estadoEvaluadorCapacidades"/>
+  <param index="12" value="estadoPlaneamientoCapacidades"/>
+  
+ </insert>
+
+ <update>
+  <query value="UPDATE SCHEMA.LegajoEjerEtapa SET 
+                       EST_EVALUADO_C_OBJ = ?, EST_EVALUADOR_C_OBJ = ?, EST_PLANEAMIENTO_C_OBJ = ?,
+                       EST_EVALUADO_CUMPL = ?, EST_EVALUADOR_CUMPL = ?, EST_PLANEAMIENTO_CUMPL = ?,
+                       EST_EVALUADO_CAPAC = ?, EST_EVALUADOR_CAPAC = ?, EST_PLANEAMIENTO_CAPAC  = ?,
+                       FECHA              = SYSDATE
+                WHERE OID_LEG_EJE_ETAP = ? " />
+
+  <param index="1" value="estadoEvaluadoCargaObj"/>
+  <param index="2" value="estadoEvaluadorCargaObj"/>
+  <param index="3" value="estadoPlaneamientoCargaObj"/>
+  <param index="4" value="estadoEvaluadoCumplimientos"/>
+  <param index="5" value="estadoEvaluadorCumplimientos"/>
+  <param index="6" value="estadoPlaneamientoCumplimientos"/>
+  <param index="7" value="estadoEvaluadoCapacidades"/>
+  <param index="8" value="estadoEvaluadorCapacidades"/>
+  <param index="9" value="estadoPlaneamientoCapacidades"/>
+
+  <param index="10" value="OID"/>
+ </update>
+
+ <select>
+   <query name="1" value="SELECT * FROM SCHEMA.LegajoEjerEtapa WHERE OID_LEG_EJE_ETAP = ? "/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="2" value="SELECT * FROM SCHEMA.LegajoEjerEtapa WHERE OID_LEG_EJE = ? AND OID_EJE_ETAPA = ? "/>
+   <param index="1" value="OID" key="LegajoEjer"/>
+   <param index="2" value="OID" key="EjercicioEtapas"/>
+ </select>
+ 
+</entity>

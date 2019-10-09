@@ -1,0 +1,10 @@
+<?xml version="1.0" standalone="yes"?>
+
+<entity>
+   <!-- PONER LAS TABLAS EN MINUSCULA -->
+
+   <tabla name="jkempresa" />
+   <tabla name="jkusuario" />
+   <tabla name="jkusuemp" />
+
+</entity>

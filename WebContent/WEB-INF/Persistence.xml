@@ -1,0 +1,183 @@
+<?xml version="1.0" ?>
+
+<!DOCTYPE entity [
+  <!ELEMENT entity (config+)>
+  <!ELEMENT config (observador*, validador*)>
+  <!ELEMENT observador  EMPTY>
+  <!ELEMENT validador EMPTY>
+
+  <!ATTLIST config name     ID    #REQUIRED>
+  <!ATTLIST config clase    CDATA #REQUIRED>
+  <!ATTLIST config factory  CDATA #REQUIRED>
+  <!ATTLIST config db       CDATA #REQUIRED>
+  <!ATTLIST config regla    CDATA "com.jkt.framework.bl.ReglaGenerica">
+  <!ATTLIST config OID      CDATA #IMPLIED>
+]>
+
+<entity>
+
+  <config name="Usuario"
+	      clase="com.jkt.top150.seguridad.bm.UsuarioRRHH"
+	      db="lib/com.jkt.top150.seguridad.da.DBUsuarioRRHH.xml"
+		  factory="com.jkt.top150.seguridad.bl.factories.FactoryUsuarioRRHH"/>
+
+  <config name="UsuarioRRHH"
+	      clase="com.jkt.top150.seguridad.bm.UsuarioRRHH"
+	      db="lib/com.jkt.top150.seguridad.da.DBUsuarioRRHH.xml"
+		  factory="com.jkt.top150.seguridad.bl.factories.FactoryUsuarioRRHH"/>
+
+  <config name="Auditoria"
+	      clase="com.jkt.top150.seguridad.bm.AuditoriaRRHH"
+	      db="lib/com.jkt.seguridad.da.DBAuditoria"
+		  factory="com.jkt.seguridad.bl.factories.FactoryAuditoria"/>
+
+  <config name="Capacidad"
+          clase="com.jkt.top150.capacidades.bm.Capacidad"
+          factory="com.jkt.top150.capacidades.bl.factories.FactoryCapacidad"
+          db="lib/com.jkt.top150.capacidades.da.DBCapacidad.xml"/>
+
+  <config name="Factor"
+          clase="com.jkt.top150.capacidades.bm.Factor"
+          factory="com.jkt.top150.capacidades.bl.factories.FactoryFactor"
+          db="lib/com.jkt.top150.capacidades.da.DBFactor.xml"/>
+
+  <config name="ValorCapacidad"
+          clase="com.jkt.top150.capacidades.bm.ValorCapacidad"
+          factory="com.jkt.top150.capacidades.bl.factories.FactoryValorCapacidad"
+          db="lib/com.jkt.top150.capacidades.da.DBValorCapacidad.xml"/>
+
+  <config name="ValorResumen"
+          clase="com.jkt.top150.capacidades.bm.ValorResumen"
+          factory="com.jkt.top150.capacidades.bl.factories.FactoryValorResumen"
+          db="lib/com.jkt.top150.capacidades.da.DBValorResumen.xml"/>
+
+  <config name="EvalResumenGlobal"
+          clase="com.jkt.top150.capacidades.bm.EvalResumenGlobal"
+          factory="com.jkt.top150.capacidades.bl.factories.FactoryEvalResumenGlobal"
+          db="lib/com.jkt.top150.capacidades.da.DBEvalResumenGlobal.xml"/>
+
+  <config name="EvalCapacidad"
+          clase="com.jkt.top150.capacidades.bm.EvalCapacidad"
+          factory="com.jkt.top150.capacidades.bl.factories.FactoryEvalCapacidad"
+          db="lib/com.jkt.top150.capacidades.da.DBEvalCapacidad.xml"/>
+
+  <config name="EvalCapacidadGlobal"
+          clase="com.jkt.top150.capacidades.bm.EvalCapacidadGlobal"
+          factory="com.jkt.top150.capacidades.bl.factories.FactoryEvalCapacidadGlobal"
+          db="lib/com.jkt.top150.capacidades.da.DBEvalCapacidadGlobal.xml"/>
+
+  <config name="EvalFactor"
+          clase="com.jkt.top150.capacidades.bm.EvalFactor"
+          factory="com.jkt.top150.capacidades.bl.factories.FactoryEvalFactor"
+          db="lib/com.jkt.top150.capacidades.da.DBEvalFactor.xml"/>
+
+  <config name="Pais"
+          clase="com.jkt.top150.configuracion.bm.Pais"
+          factory="com.jkt.top150.configuracion.bl.factories.FactoryPais"
+          db="lib/com.jkt.top150.configuracion.da.DBPais.xml"/>
+
+  <config name="Ejercicio"
+          clase="com.jkt.top150.varios.bm.Ejercicio"
+          factory="com.jkt.top150.varios.bl.factories.FactoryEjercicio"
+          db="lib/com.jkt.top150.varios.da.DBEjercicio.xml"/>
+
+  <config name="GrupoObjetivo"
+          clase="com.jkt.top150.objetivos.bm.GrupoObjetivo"
+          factory="com.jkt.top150.objetivos.bl.factories.FactoryGrupoObjetivo"
+          db="lib/com.jkt.top150.objetivos.da.DBGrupoObjetivo.xml"/>
+
+  <config name="Cuantificador"
+          clase="com.jkt.top150.objetivos.bm.Cuantificador"
+          factory="com.jkt.top150.objetivos.bl.factories.FactoryCuantificador"
+          db="lib/com.jkt.top150.objetivos.da.DBCuantificador.xml"/>
+
+  <config name="NivelIdioma"
+          clase="com.jkt.top150.varios.bm.NivelIdioma"
+          factory="com.jkt.top150.varios.bl.factories.FactoryNivelIdioma"
+          db="lib/com.jkt.top150.varios.da.DBNivelIdioma.xml"/>
+
+  <config name="Legajo"
+          clase="com.jkt.top150.legajos.bm.Legajo"
+          factory="com.jkt.top150.legajos.bl.factories.FactoryLegajo"
+          db="lib/com.jkt.top150.legajos.da.DBLegajo.xml"/>
+
+  <config name="Entidad"
+          clase="com.jkt.top150.configuracion.bm.Entidad"
+          factory="com.jkt.top150.configuracion.bl.factories.FactoryEntidad"
+          db="lib/com.jkt.top150.configuracion.da.DBEntidad.xml"/>
+
+  <config name="Estructura"
+          clase="com.jkt.top150.configuracion.bm.Estructura"
+          factory="com.jkt.top150.configuracion.bl.factories.FactoryEstructura"
+          db="lib/com.jkt.top150.configuracion.da.DBEstructura.xml"/>
+
+  <config name="GrupoConcVarios"
+          clase="com.jkt.top150.varios.bm.GrupoConcVarios"
+          factory="com.jkt.top150.varios.bl.factories.FactoryGrupoConcVarios"
+          db="lib/com.jkt.top150.varios.da.DBGrupoConcVarios.xml"/>
+
+  <config name="ConcVarios"
+          clase="com.jkt.top150.varios.bm.ConcVarios"
+          factory="com.jkt.top150.varios.bl.factories.FactoryConcVarios"
+          db="lib/com.jkt.top150.varios.da.DBConcVarios.xml"/>
+
+  <config name="Etapa"
+          clase="com.jkt.top150.objetivos.bm.Etapa"
+          factory="com.jkt.top150.objetivos.bl.factories.FactoryEtapa"
+          db="lib/com.jkt.top150.objetivos.da.DBEtapa.xml"/>
+
+  <config name="LegajoEjer"
+          clase="com.jkt.top150.objetivos.bm.LegajoEjer"
+          factory="com.jkt.top150.objetivos.bl.factories.FactoryLegajoEjer"
+          db="lib/com.jkt.top150.objetivos.da.DBLegajoEjer.xml"/>
+
+  <config name="LegajoEjerEtapa"
+          clase="com.jkt.top150.objetivos.bl.LegajoEjerEtapa"
+          factory="com.jkt.top150.objetivos.bl.factories.FactoryLegajoEjerEtapa"
+          db="lib/com.jkt.top150.objetivos.da.DBLegajoEjerEtapa.xml"/>
+
+  <config name="LegajoIdioma"
+          clase="com.jkt.top150.varios.bl.LegajoIdioma"
+          factory="com.jkt.top150.varios.bl.factories.FactoryLegajoIdioma"
+          db="lib/com.jkt.top150.varios.da.DBLegajoIdioma.xml"/>
+
+  <config name="ValConcVarios"
+          clase="com.jkt.top150.varios.bl.ValConcVarios"
+          factory="com.jkt.top150.varios.bl.factories.FactoryValConcVarios"
+          db="lib/com.jkt.top150.varios.da.DBValConcVarios.xml"/>
+
+  <config name="LegajoVarios"
+          clase="com.jkt.top150.varios.bl.LegajoVarios"
+          factory="com.jkt.top150.varios.bl.factories.FactoryLegajoVarios"
+          db="lib/com.jkt.top150.varios.da.DBLegajoVarios.xml"/>
+
+  <config name="Objetivo"
+          clase="com.jkt.top150.objetivos.bm.Objetivo"
+          factory="com.jkt.top150.objetivos.bl.factories.FactoryObjetivo"
+          db="lib/com.jkt.top150.objetivos.da.DBObjetivo.xml"/>
+
+  <config name="Cuantificacion"
+          clase="com.jkt.top150.objetivos.bl.Cuantificacion"
+          factory="com.jkt.top150.objetivos.bl.factories.FactoryCuantificacion"
+          db="lib/com.jkt.top150.objetivos.da.DBCuantificacion.xml"/>
+
+  <config name="Cumplimiento"
+          clase="com.jkt.top150.objetivos.bm.Cumplimiento"
+          factory="com.jkt.top150.objetivos.bl.factories.FactoryCumplimiento"
+          db="lib/com.jkt.top150.objetivos.da.DBCumplimiento.xml"/>
+
+  <config name="ValCumpGlobal"
+          clase="com.jkt.top150.objetivos.bl.ValCumpGlobal"
+          factory="com.jkt.top150.objetivos.bl.factories.FactoryValCumpGlobal"
+          db="lib/com.jkt.top150.objetivos.da.DBValCumpGlobal.xml"/>
+
+  <config name="EjercicioEtapas"
+          clase="com.jkt.top150.varios.bl.EjercicioEtapas"
+          factory="com.jkt.top150.varios.bl.factories.FactoryEjercicioEtapas"
+          db="lib/com.jkt.top150.varios.da.DBEjercicioEtapas.xml"/>
+
+  <config name="CumplimientoGlobal"
+          clase="com.jkt.top150.objetivos.bm.CumplimientoGlobal"
+          factory="com.jkt.top150.objetivos.bl.factories.FactoryCumplimientoGlobal"
+          db="lib/com.jkt.top150.objetivos.da.DBCumplimientoGlobal.xml"/>
+</entity>

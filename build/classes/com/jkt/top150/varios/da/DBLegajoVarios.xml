@@ -1,0 +1,49 @@
+<?xml version="1.0" standalone="yes"?>
+<entity name="Queries">
+
+ <insert>
+  <query value="INSERT INTO SCHEMA.Legajovarios
+               (oid_leg_pot,oid_leg_eje,oid_conc,oid_val_conc,secu,texto,monto)
+                VALUES (?,?,?,?,?,?,?)" />
+
+  <param index="1" value="OID"/>
+  <param index="2" value="legajoEjer.OID"/>
+  <param index="3" value="concVarios.OID"/>
+  <param index="4" value="valConcVarios.OID"/>
+  <param index="5" value="secuencia"/>
+  <param index="6" value="texto"/>
+  <param index="7" value="monto"/>
+ </insert>
+
+ <update>
+  <query value="UPDATE SCHEMA.Legajovarios SET 
+                oid_leg_eje = ?, oid_conc = ?, oid_val_conc = ?, secu = ?, texto = ?, monto = ? 
+                WHERE OID_LEG_POT = ? " />
+
+  <param index="1" value="legajoEjer.OID"/>
+  <param index="2" value="concVarios.OID"/>
+  <param index="3" value="valConcVarios.OID"/>
+  <param index="4" value="secuencia"/>
+  <param index="5" value="texto"/>
+  <param index="6" value="monto"/>
+  <param index="7" value="OID"/>
+ </update>
+
+ <delete>
+  <query value="DELETE FROM SCHEMA.Legajovarios WHERE OID_LEG_POT = ? " />
+
+  <param index="1" value="OID"/>
+ </delete>
+
+ <select>
+   <query name="1" value="SELECT * FROM SCHEMA.Legajovarios WHERE OID_LEG_POT = ?"/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="3" value="SELECT * FROM SCHEMA.Legajovarios WHERE OID_LEG_EJE = ? AND OID_CONC = ?"/>
+   <param index="1" key="LegajoEjer" value="OID"/>
+   <param index="2" key="ConcVarios" value="OID"/>
+ </select>
+
+</entity>

@@ -1,0 +1,50 @@
+<?xml version="1.0" standalone="yes"?>
+<entity name="Queries">
+
+ <insert>
+  <query value="INSERT INTO SCHEMA.ValConcVarios
+               (oid_val_conc,oid_conc,codigo,descripcion,activo)
+                VALUES (?,?,?,?,?)" />
+
+  <param index="1" value="OID"/>
+  <param index="2" value="concVarios.OID"/>
+  <param index="3" value="codigo"/>
+  <param index="4" value="descripcion"/>
+  <param index="5" value="activo"/>
+ </insert>
+
+ <update>
+  <query value="UPDATE SCHEMA.ValConcVarios SET 
+                oid_conc = ?, codigo = ?, descripcion = ?, activo = ? 
+                WHERE OID_VAL_CONC = ? " />
+
+  <param index="1" value="concVarios.OID"/>
+  <param index="2" value="codigo"/>
+  <param index="3" value="descripcion"/>
+  <param index="4" value="activo"/>
+  <param index="5" value="OID"/>
+ </update>
+
+ <delete>
+  <query value="DELETE FROM SCHEMA.ValConcVarios
+                WHERE OID_VAL_CONC = ? " />
+
+  <param index="1" value="OID"/>
+ </delete>
+
+ <select>
+   <query name="1" value="SELECT * FROM SCHEMA.ValConcVarios "/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="2" value="SELECT * FROM SCHEMA.ValConcVarios "/>
+   <param index="1"/>
+ </select>
+
+ <select>
+   <query name="3" value="SELECT * FROM SCHEMA.ValConcVarios "/>
+   <param index="1"/>
+ </select>
+
+</entity>

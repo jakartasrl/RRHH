@@ -1,0 +1,180 @@
+body {
+  font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+  font-size: 10px;
+}
+
+td {
+	font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+
+th {
+	font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+#center {
+	text-align: center;
+}
+#izq {
+	text-align: left;
+}
+.comentario {
+	text-align: center;
+	padding-left: 5px;
+	border: 1px solid #999999;
+	margin-top: 10px;
+}
+.comentario th{
+ 	background-image: url(/RRHH/img/fondo.jpg);
+	color: #666666;
+	height: 22px;
+	padding-left: 10px;
+	text-align: left;
+}
+.comentario textarea{
+	font-size:10px;
+	font-family: Verdana;
+	width: 98%;
+}
+.contenido {
+	text-align: left;
+	padding: 2px;
+	margin-top: 10px;
+	background-color:#999999;
+}
+.contenido tr.par{
+	background-color: #ECECEC;
+}
+.contenido tr{
+	background-color: #FFFFFF;
+}
+.contenido tr.impar {
+	background-color: #FFFFFF;
+}
+.contenido tr.total {
+	background-color: #666666;
+	color: #FFFFFF;
+	font-weight: bold;
+	height: 20px;
+}
+.contenido th{
+	background-image: url(/RRHH/img/fondo.jpg);
+	color: #666666;
+	padding: 6px;
+}
+.contenido th table tr{
+	background: none;
+}
+.contenido th a{
+	color: #666666;
+	text-decoration: none;
+}
+.contenido th a:hover{
+	color: #666666;
+	text-decoration: underline;
+}
+
+.contenido textarea{
+	font-size:10px;
+	font-family: Verdana;
+}
+.contenido input{
+	font-size:10px;
+	font-family: Verdana;
+}
+.contenido select{
+	font-size:10px;
+	font-family: Verdana;
+}
+.contenido tr.header{
+	background-image: none;
+	background-color: #FF0000;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-align: center;
+}
+.contenido tr.header td.activo{
+	background-image: none;
+	background-color: #FF0000;
+	color: #FFFFFF;
+	font-weight: bold;
+	text-align: center;
+	height: 20px;
+}
+.contenido tr.header td.inactivo{
+	background-image: none;
+	background-color: #ECECEC;
+	color: #666666;
+	font-weight: bold;
+	text-align: center;
+	height: 20px;
+}
+
+.evaluacion {
+	text-align: left;
+	padding-left: 5px;
+	border: 1px solid #666666;
+	margin-top: 10px;
+}
+.evaluacion th{
+	background-image: url(/RRHH/img/fondo.jpg);
+	color: #666666;
+	height: 22px;
+	padding-left: 10px;
+}
+.linea {
+	background-color: #FF0000;
+	height: 1px;
+}
+.evaluacion table {
+	text-align: center;
+	padding: 3px;
+	border: 1px solid #FF0000;
+	margin: 5px;
+	background-color: #ECECEC;
+	font-weight: bold;
+	color: #666666;
+}
+.botones {
+	text-align: center;
+	padding: 5px;
+	border: 1px solid #999999;
+	margin-top: 10px;
+}
+.TablaError {
+	border: 1px solid #FF0000;
+	background-color: #FFDFDD;
+	padding: 0px;
+	margin: 0px;	
+
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	text-align: center;
+	font-weight: bold;
+	color: #FF0000;
+}
+.TituloPpal {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 17px;
+	font-weight: bolder;
+	color: #FFFFFF;
+	background-image: url(/RRHH/img/fondo.jpg);
+	height: 30px
+}
+.TituloTabla {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #FFFF66;
+	font-weight: bold;
+	background-color: #547378; /*#FABD3C*/
+	height: 25px;
+	text-align: left;
+	padding: 0px;
+	border-bottom: 0px solid #003399;
+	border-top-color: #003399;
+	border-right-color: #003399;
+	border-left-color: #003399;
+}
+.TablaComun { 
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	color: #666666;
+}
