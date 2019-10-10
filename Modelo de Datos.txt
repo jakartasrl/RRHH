@@ -6,7 +6,7 @@ CREATE TABLE capacidad
   activo smallint);
 
  CREATE TABLE EVALCAPACIDAD
-               (oid_eval_cap integer not null primary key,
+       (oid_eval_cap integer not null primary key,
  		oid_leg_eje integer ,
  		oid_etapa integer , 
 		oid_cap integer , oid_val_cap integer ,
@@ -15,12 +15,24 @@ CREATE TABLE capacidad
 
 
  CREATE TABLE EvalCapacGlobal
-               (oid_eval_glo integer not null primary key,
+        (oid_eval_glo integer not null primary key,
  		oid_leg_eje integer, 
 		oid_etapa integer,  
 		oid_val_cap integer, 
 		oid_usu integer,
 		fec_proceso  DATE);
+		
+
+CREATE TABLE EvalCapacGlobalHist
+       (oid_eval_glo_hist integer not null primary key,
+        oid_eval_glo integer ,
+ 		oid_leg_eje integer, 
+		oid_etapa integer,  
+		oid_val_cap integer, 
+		oid_usu integer,
+		fec_proceso  DATE);
+
+
 
 CREATE TABLE EvalFactores
                (oid_eval_fac integer not null primary key,
@@ -153,6 +165,16 @@ CREATE TABLE CUMPGLOBAL
 		fec_proceso DATE,
  		comentario varchar2(100));
 
+CREATE TABLE CUMPGLOBALHIST
+       (oid_cump_glob_hist integer not null primary key,
+        oid_cump_glob integer,
+ 		oid_leg_eje integer,
+		oid_etapa integer,
+		oid_val_cump integer,
+		valor decimal(12,2),
+		oid_usu integer,
+		fec_proceso DATE,
+ 		comentario varchar2(100));
 
 
 CREATE TABLE Ejercicio (oid_eje integer not null primary key,
@@ -247,7 +269,110 @@ CREATE TABLE Etapa(
 
 
 CREATE TABLE LegajoEjer
-               (OID_LEG_EJE,OID_LEG,OID_EJE,ES_EVALUADO,ES_EVALUADOR,OID_EVALUADOR,OID_USU,FEC_PROCESO)
+               (OID_LEG_EJE int primary key not null,
+               OID_LEG int,
+               OID_EJE int,
+               OID_EST int,
+               CATEGORIA varchar2(50),
+               PUESTO varchar2(50),
+               ES_EVALUADO smallint,
+               ES_EVALUADOR smallint,
+               ES_ADMINISTRADOR SMALLINT,
+               OID_EVALUADOR int,
+               OID_ADMINISTRADOR int,
+               OID_USU int,
+               FEC_PROCESO DATE);
+
+               
+CREATE TABLE LegajoEjerEtapa
+              (OID_LEG_EJE_ETAP int PRIMARY KEY NOT null,
+               OID_LEG_EJE int,
+               OID_EJE_ETAPA int,
+               EST_EVALUADO_C_OBJ SMALLINT, 
+               EST_EVALUADOR_C_OBJ SMALLINT,
+               EST_PLANEAMIENTO_C_OBJ SMALLINT,
+               EST_EVALUADO_CUMPL SMALLINT,
+               EST_EVALUADOR_CUMPL SMALLINT,
+               EST_PLANEAMIENTO_CUMPL SMALLINT,
+               EST_EVALUADO_CAPAC SMALLINT, 
+               EST_EVALUADOR_CAPAC SMALLINT,
+               EST_PLANEAMIENTO_CAPAC SMALLINT,
+               FECHA DATE);
+
+
+CREATE TABLE GrupoObjetivo
+               (oid_grupo int PRIMARY KEY NOT null,
+               codigo varchar2(20),
+               descripcion varchar2(50),
+               orden smallint,
+               es_reto smallint,
+               activo smallint);
+               
+               
+               
+CREATE TABLE ValCumpGlobal
+               (oid_val_cump int PRIMARY KEY NOT null,
+               codigo varchar2(20),
+               descripcion  varchar2(50),
+               orden smallint,
+               valor_numerico decimal(10,2),
+               ponderador decimal(6, 2),
+               activo smallint,
+               desc_ext  varchar2(50)) ;
+ 
+ 
+CREATE TABLE ConcVarios
+      (oid_conc int PRIMARY KEY NOT null,
+       codigo varchar2(20),
+       descripcion varchar2(50),
+       orden SMALLINT,
+       tipo  varchar2(10),
+       repetitivo SMALLINT,
+       activo SMALLINT);
+       
+       
+ 
+CREATE TABLE objetivo
+     (oid_obj int PRIMARY KEY NOT NULL,
+      oid_leg_eje int,
+      oid_grupo int,
+      nro_obj int,
+      descripcion varchar2(80),
+      cuantificacion  varchar2(50),
+      ponderacion decimal(5,2),
+      fuente  varchar2(50),
+      aspectos_cual  varchar2(50),
+      oid_usu int,
+      fec_proceso DATE,
+      cump_real  varchar2(50));
+                   
+CREATE TABLE objetivoHist
+     (oid_obj_hist int PRIMARY KEY NOT NULL,
+      oid_obj int ,
+      oid_leg_eje int,
+      oid_grupo int,
+      nro_obj int,
+      descripcion varchar2(80),
+      cuantificacion  varchar2(50),
+      ponderacion decimal(5,2),
+      fuente  varchar2(50),
+      aspectos_cual  varchar2(50),
+      oid_usu int,
+      fec_proceso DATE,
+      cump_real  varchar2(50));
+                   
+
+                             
+-------------------------------
+CREATE TABLE lejajosSistemaSource(
+    bup_legajo varchar2(20) PRIMARY KEY NOT null,
+    bup_apellido  varchar2(50),
+    bup_nombre    varchar2(50),
+    bup_fec_nac   DATE,
+    BUP_NACIONALI varchar2(50), 
+    BUP_EMAIL     varchar2(50)
+    );
+    
                 
  
 

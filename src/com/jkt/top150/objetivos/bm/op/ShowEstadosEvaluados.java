@@ -17,7 +17,7 @@ import com.jkt.top150.varios.bl.EvaluadorHandler;
 import com.jkt.top150.varios.bl.ListOrderer;
 import com.jkt.top150.varios.bm.Ejercicio;
 
-public class ShowEstadosEvaluadosDS extends Operation {
+public class ShowEstadosEvaluados extends Operation {
 
 	public static final String OBJETIVOS     = "Objetivos";
 	public static final String CUMPLIMIENTOS = "Cumplimientos";

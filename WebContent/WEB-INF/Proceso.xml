@@ -7,9 +7,9 @@
            FROM BUPLEGAJO WHERE BUP_NOMBRE LIKE '%?%' " 
  -->
 
- <interfaz name="Legajos" descripcion="Paises"
-           connection="jdbc:oracle:thin:@dbs7:1521:rio52d"
+ <interfaz name="Legajos" descripcion="Legajos"
+           connection="jdbc:oracle:thin:@localhost:1521:XE"
            JDBC="oracle.jdbc.driver.OracleDriver"
-           query="select bup_legajo, bup_apellido, bup_nombre, bup_fec_nac, BUP_NACIONALI, BUP_EMAIL from bup01.personas@bup01_dblink where bup_ayn like ?" />
+           query="select bup_legajo, bup_apellido, bup_nombre, bup_fec_nac, BUP_NACIONALI, BUP_EMAIL from lejajosSistemaSource where bup_apellido like ?" />
 
 </interfaces>

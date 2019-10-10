@@ -1,5 +1,7 @@
 <%@ include file="../util/header.jsp" %>
 
+
+
 <input type=hidden name="op" value="SaveConceptos">
 
 <div align=center>
@@ -34,8 +36,8 @@
 	    	<input name="T_Conceptos_F<%= i%>_oid" type=hidden value="<%= next.getObject("oid") %>">
             <td align=center>
               <select NAME="T_Conceptos_F<%= i%>_tipo">
-                 <option VALUE="R" <% if(next.getObject("tipo").equals("R")) { %> selected <% } %>>EVALUADOR
-                 <option VALUE="O" <% if(next.getObject("tipo").equals("O")) { %> selected <% } %>>EVALUADO
+                 <option VALUE="R" <% if(next.getObject("tipo").equals("R")) { %> selected <% } %>>EVALUADOR</option>
+                 <option VALUE="O" <% if(next.getObject("tipo").equals("O")) { %> selected <% } %>>EVALUADO</option>
               </select>
             </td>
             <td align=center><input type=checkbox name="T_Conceptos_F<%= i%>_activo" <%if(((Boolean)next.getObject("activo")).booleanValue()){%>checked<%}%>></td>

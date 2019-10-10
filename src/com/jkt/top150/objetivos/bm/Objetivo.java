@@ -229,8 +229,8 @@ public class Objetivo extends Persistente {
          int numero =  db.getNumero("DBCUANTIFICACIONHIST");
          
          StringBuffer sb = new StringBuffer();
-         sb.append("INSERT INTO " + sesion.getSchema() + "OBJETIVOHIST (oid_obj_hist, oid_obj,oid_leg_eje,oid_grupo,nro_obj,descripcion,cuantificacion,ponderacion,fuente,aspectos_cual,posterior,oid_usu,fec_proceso)");
-         sb.append("SELECT ?, oid_obj,oid_leg_eje,oid_grupo,nro_obj,descripcion,cuantificacion,ponderacion,fuente,aspectos_cual,posterior,oid_usu,fec_proceso FROM " + sesion.getSchema() + "OBJETIVO WHERE OID_OBJ = ?");
+         sb.append("INSERT INTO " + sesion.getSchema() + "OBJETIVOHIST (oid_obj_hist, oid_obj,oid_leg_eje,oid_grupo,nro_obj,descripcion,cuantificacion,ponderacion,fuente,aspectos_cual,oid_usu,fec_proceso)");
+         sb.append("SELECT ?, oid_obj,oid_leg_eje,oid_grupo,nro_obj,descripcion,cuantificacion,ponderacion,fuente,aspectos_cual,oid_usu,fec_proceso FROM " + sesion.getSchema() + "OBJETIVO WHERE OID_OBJ = ?");
          
          PreparedStatement ps = pool.getPreparedStatement(sesion.getConnection(), sb.toString());
          ps.setInt(1, numero);

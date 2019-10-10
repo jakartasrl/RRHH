@@ -26,31 +26,31 @@ public class SaveEstadosEvaluados extends Operation {
 		while(it.hasNext()){
 			Registro next = (Registro) it.next();
 			
-			if(etapa.isCargaObjetivo() && next.getInteger(ShowEstadosEvaluadosDS.OBJETIVOS).intValue() != 0){
+			if(etapa.isCargaObjetivo() && next.getInteger(ShowEstadosEvaluados.OBJETIVOS).intValue() != 0){
 				LegajoEjer legEje   = (LegajoEjer) next.getObject(sesion, "oid_leg_ejer", LegajoEjer.class);
 				LegajoEjerEtapa lee = legEje.getEjercicioEtapas();
 
-				this.actualizarEstados(lee, next.getInteger(ShowEstadosEvaluadosDS.OBJETIVOS).intValue(), ShowEstadosEvaluadosDS.OBJETIVOS);
+				this.actualizarEstados(lee, next.getInteger(ShowEstadosEvaluados.OBJETIVOS).intValue(), ShowEstadosEvaluados.OBJETIVOS);
 				
 				tran.addObject(lee);
 			}
 
-			if(etapa.isCargaCumplimiento() && next.getInteger(ShowEstadosEvaluadosDS.CUMPLIMIENTOS).intValue() != 0){
+			if(etapa.isCargaCumplimiento() && next.getInteger(ShowEstadosEvaluados.CUMPLIMIENTOS).intValue() != 0){
 				LegajoEjer legEje   = (LegajoEjer) next.getObject(sesion, "oid_leg_ejer", LegajoEjer.class);
 				LegajoEjerEtapa lee = legEje.getEjercicioEtapas();
 				
-				this.actualizarEstados(lee, next.getInteger(ShowEstadosEvaluadosDS.CUMPLIMIENTOS).intValue(), ShowEstadosEvaluadosDS.CUMPLIMIENTOS);
+				this.actualizarEstados(lee, next.getInteger(ShowEstadosEvaluados.CUMPLIMIENTOS).intValue(), ShowEstadosEvaluados.CUMPLIMIENTOS);
 				
 				tran.addObject(lee);
 			}
 			
-			if(etapa.isEvaluaCapacidades() && next.getInteger(ShowEstadosEvaluadosDS.CAPACIDADES).intValue() != 0){
+			if(etapa.isEvaluaCapacidades() && next.getInteger(ShowEstadosEvaluados.CAPACIDADES).intValue() != 0){
 				LegajoEjer legEje   = (LegajoEjer) next.getObject(sesion, "oid_leg_ejer", LegajoEjer.class);
 				
 				EjercicioEtapas ee = EjercicioEtapas.getEjercicioEtapas(sesion, Etapa.getEtapaActual(sesion));
 				LegajoEjerEtapa lee = legEje.getEjercicioEtapas(ee);
 				
-				this.actualizarEstados(lee, next.getInteger(ShowEstadosEvaluadosDS.CAPACIDADES).intValue(), ShowEstadosEvaluadosDS.CAPACIDADES);
+				this.actualizarEstados(lee, next.getInteger(ShowEstadosEvaluados.CAPACIDADES).intValue(), ShowEstadosEvaluados.CAPACIDADES);
 				
 				tran.addObject(lee);
 			}
@@ -79,19 +79,19 @@ public class SaveEstadosEvaluados extends Operation {
 			return;
 		
 		if(aNum == 5){
-			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluadosDS.OBJETIVOS)){
+			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluados.OBJETIVOS)){
 				lee.setEstadoEvaluadoCargaObj(EstadosHandler.ESTADO_CERRADO);
 				lee.setEstadoEvaluadorCargaObj(EstadosHandler.ESTADO_CERRADO);
 				lee.setEstadoPlaneamientoCargaObj(EstadosHandler.ESTADO_CERRADO);
 			}
 
-			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluadosDS.CAPACIDADES)){
+			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluados.CAPACIDADES)){
 				lee.setEstadoEvaluadoCapacidades(EstadosHandler.ESTADO_CERRADO);
 				lee.setEstadoEvaluadorCapacidades(EstadosHandler.ESTADO_CERRADO);
 				lee.setEstadoPlaneamientoCapacidades(EstadosHandler.ESTADO_CERRADO);
 			}
 
-			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluadosDS.CUMPLIMIENTOS)){
+			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluados.CUMPLIMIENTOS)){
 				lee.setEstadoEvaluadoCumplimientos(EstadosHandler.ESTADO_CERRADO);
 				lee.setEstadoEvaluadorCumplimientos(EstadosHandler.ESTADO_CERRADO);
 				lee.setEstadoPlaneamientoCumplimientos(EstadosHandler.ESTADO_CERRADO);
@@ -101,19 +101,19 @@ public class SaveEstadosEvaluados extends Operation {
 		}
 
 		//SE INICIALIZAN TODOS LOS ESTADOS
-		if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluadosDS.OBJETIVOS)){
+		if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluados.OBJETIVOS)){
 			lee.setEstadoEvaluadoCargaObj(EstadosHandler.ESTADO_CARGANDO);
 			lee.setEstadoEvaluadorCargaObj(EstadosHandler.ESTADO_CARGANDO);
 			lee.setEstadoPlaneamientoCargaObj(EstadosHandler.ESTADO_CARGANDO);
 		}
 
-		if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluadosDS.CAPACIDADES)){
+		if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluados.CAPACIDADES)){
 			lee.setEstadoEvaluadoCapacidades(EstadosHandler.ESTADO_CARGANDO);
 			lee.setEstadoEvaluadorCapacidades(EstadosHandler.ESTADO_CARGANDO);
 			lee.setEstadoPlaneamientoCapacidades(EstadosHandler.ESTADO_CARGANDO);
 		}
 
-		if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluadosDS.CUMPLIMIENTOS)){
+		if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluados.CUMPLIMIENTOS)){
 			lee.setEstadoEvaluadoCumplimientos(EstadosHandler.ESTADO_CARGANDO);
 			lee.setEstadoEvaluadorCumplimientos(EstadosHandler.ESTADO_CARGANDO);
 			lee.setEstadoPlaneamientoCumplimientos(EstadosHandler.ESTADO_CARGANDO);
@@ -125,29 +125,29 @@ public class SaveEstadosEvaluados extends Operation {
 		
 		//FINALIZACION DE EVALUADO
 		if(aNum == 2){
-			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluadosDS.OBJETIVOS))
+			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluados.OBJETIVOS))
 				lee.setEstadoEvaluadoCargaObj(EstadosHandler.ESTADO_FIN_CARGA);
 			
-			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluadosDS.CAPACIDADES))
+			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluados.CAPACIDADES))
 				lee.setEstadoEvaluadoCapacidades(EstadosHandler.ESTADO_FIN_CARGA);
 
-			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluadosDS.CUMPLIMIENTOS))
+			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluados.CUMPLIMIENTOS))
 				lee.setEstadoEvaluadoCumplimientos(EstadosHandler.ESTADO_FIN_CARGA);
 		}
 		
 		//FINALIZACION DE EVALUADOR
 		if(aNum == 3){
-			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluadosDS.OBJETIVOS)){
+			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluados.OBJETIVOS)){
 				lee.setEstadoEvaluadoCargaObj(EstadosHandler.ESTADO_FIN_CARGA);
 				lee.setEstadoEvaluadorCargaObj(EstadosHandler.ESTADO_FIN_CARGA);
 			}
 			
-			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluadosDS.CAPACIDADES)){
+			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluados.CAPACIDADES)){
 				//lee.setEstadoEvaluadoCapacidades(EstadosHandler.ESTADO_FIN_CARGA);EL EVALUADOR TERMINA ANTES
 				lee.setEstadoEvaluadorCapacidades(EstadosHandler.ESTADO_FIN_CARGA);
 			}
 
-			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluadosDS.CUMPLIMIENTOS)){
+			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluados.CUMPLIMIENTOS)){
 				lee.setEstadoEvaluadoCumplimientos(EstadosHandler.ESTADO_FIN_CARGA);
 				lee.setEstadoEvaluadorCumplimientos(EstadosHandler.ESTADO_FIN_CARGA);
 			}
@@ -155,19 +155,19 @@ public class SaveEstadosEvaluados extends Operation {
 
 		//FINALIZACION DE PLANEMIAENTO
 		if(aNum == 4){
-			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluadosDS.OBJETIVOS)){
+			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluados.OBJETIVOS)){
 				lee.setEstadoEvaluadoCargaObj(EstadosHandler.ESTADO_FIN_CARGA);
 				lee.setEstadoEvaluadorCargaObj(EstadosHandler.ESTADO_FIN_CARGA);
 				lee.setEstadoPlaneamientoCargaObj(EstadosHandler.ESTADO_FIN_CARGA);
 			}
 			
-			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluadosDS.CAPACIDADES)){
+			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluados.CAPACIDADES)){
 				lee.setEstadoEvaluadoCapacidades(EstadosHandler.ESTADO_FIN_CARGA);
 				lee.setEstadoEvaluadorCapacidades(EstadosHandler.ESTADO_FIN_CARGA);
 				lee.setEstadoPlaneamientoCapacidades(EstadosHandler.ESTADO_FIN_CARGA);
 			}
 
-			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluadosDS.CUMPLIMIENTOS)){
+			if(aEtapa.equalsIgnoreCase(ShowEstadosEvaluados.CUMPLIMIENTOS)){
 				lee.setEstadoEvaluadoCumplimientos(EstadosHandler.ESTADO_FIN_CARGA);
 				lee.setEstadoEvaluadorCumplimientos(EstadosHandler.ESTADO_FIN_CARGA);
 				lee.setEstadoPlaneamientoCumplimientos(EstadosHandler.ESTADO_FIN_CARGA);
