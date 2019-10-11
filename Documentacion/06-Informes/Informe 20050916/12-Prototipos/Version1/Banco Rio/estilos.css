@@ -1,0 +1,93 @@
+body {
+  font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+  font-size: 10px;
+}
+
+td {
+	font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+
+th {
+	font-family: Verdana, Geneva, Arial, helvetica, sans-serif;
+}
+.titulo {
+	text-align: left;
+	padding: 6px;
+	border: 1px solid #000064;
+	margin-top: 10px;
+}
+
+.titulo th{
+	background-color: #000064;
+	color: #f59605;
+}
+
+.titulo input{
+	font-size:10px;
+	font-family: Verdana;
+}
+.comentario {
+	text-align: center;
+	padding-left: 5px;
+	border: 1px solid #000064;
+	margin-top: 10px;
+}
+.comentario th{
+	background-color: #000064;
+	color: #f59605;
+	height: 22px;
+	padding-left: 10px;
+	text-align: left;
+}
+.comentario textarea{
+	font-size:10px;
+	font-family: Verdana;
+	width: 98%;
+}
+.contenido {
+	text-align: left;
+	padding-left: 5px;
+
+	border: 1px solid #000064;
+	margin-top: 10px;
+}
+.contenido tr.par{
+	background-color: #CCCCCC;
+}
+.contenido tr.impar {
+	background-color: #FFFFFF;
+}
+.contenido tr.total {
+	background-color: #bfbfd9;
+}
+.contenido th{
+	background-color: #000064;
+	color: #f59605;
+	padding: 6px;
+}
+.contenido textarea{
+	font-size:10px;
+	font-family: Verdana;
+	width: 98%;
+}
+.contenido input{
+	font-size:10px;
+	width: 98%;
+	font-family: Verdana;
+}
+.evaluacion {
+	text-align: left;
+	padding-left: 5px;
+	border: 1px solid #000064;
+	margin-top: 10px;
+}
+.evaluacion th{
+	background-color: #000064;
+	color: #f59605;
+	height: 22px;
+	padding-left: 10px;
+}
+.linea {
+	background-color: #000064;
+	height: 1px;
+}

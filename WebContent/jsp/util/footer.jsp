@@ -1,3 +1,4 @@
+
 <% if(size != 0) { 
 %>
   <table width="<%= size %>" border=0 cellspacing="0" cellpadding="0" class="botones">

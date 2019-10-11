@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<MENU>
+<GENERAL direccion="horizontal" margen="1" menuFont="1TradeGothicBoldCond" menuSize="12" menuColorUp="0x666666" menuColorOver="0xFFFFFF" menuBgcolorUp="0xEBEBEB" menuBgcolorOver="0xFF0000" submenuFont="1TradeGothicBoldCond" submenuSize="11" submenuColorUp="0xFFFFFF" submenuColorOver="0x336699" submenuBgcolorUp="0x999999" submenuBgcolorOver="0xCCCCCC">
+
+<OPCION nombre= "Portada" vinculo="portada.html" target="main"/>
+<OPCION nombre= "Carga Objetivos" vinculo="cargaobjetivos.html" target="main"/>
+<OPCION nombre= "Cumplimientos" vinculo="objetivos.html" target="main"/>
+<OPCION nombre= "Competencias" vinculo="competencias.html" target="main"/>
+<OPCION nombre= "Resumen" vinculo="resumen.html" target="main"/>
+<OPCION nombre= "Valoracion" vinculo="valoracion.html" target="main"/>
+<OPCION nombre= "V. IMPRIMIBLE" vinculo="valoracion.html" target="main"/>
+</GENERAL>
+</MENU>

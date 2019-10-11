@@ -362,7 +362,14 @@ CREATE TABLE objetivoHist
       cump_real  varchar2(50));
                    
 
-                             
+ 
+CREATE TABLE ValorResumenEmpresa
+               (OID_VAL_RES_EMP integer not null primary key,
+ 				LEGAJO   varchar2(20),  
+   				OID_VAL_RES  int,  
+   				PERIODO   varchar2(50)
+   				)
+   				                            
 -------------------------------
 CREATE TABLE lejajosSistemaSource(
     bup_legajo varchar2(20) PRIMARY KEY NOT null,

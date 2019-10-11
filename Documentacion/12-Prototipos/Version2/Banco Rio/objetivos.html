@@ -1,0 +1,498 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Untitled Document</title>
+<link href="estilos.css" rel="stylesheet" type="text/css">
+<SCRIPT language=JavaScript>
+		function showRow(rowID) {
+			var theRow = document.getElementById("tr_" + rowID);
+			var theImage = document.getElementById("img_" + rowID);
+
+			(theRow.style.display == "") ? theRow.style.display = "none" : theRow.style.display = "";
+			(theRow.style.display == "") ? theImage.src = "img/menos.gif" : theImage.src = "img/mas.gif";
+		}
+	</SCRIPT>
+
+</head>
+
+<body leftmargin="0" topmargin="0" marginwidth="0" marginheight="0" >
+<div align="center">
+  <table width="760"  border="0" cellspacing="0" cellpadding="0" class="titulo">
+    <tr>
+      <th colspan="4">Fijacion de Objetivo </th>
+    </tr>
+    <tr>
+      <td width="77"><strong>Evaluado: </strong></td>
+      <td width="314">Juan Pablo Duran </td>
+      <td width="95"><strong>Evaluador: </strong></td>
+      <td width="314">Nancy Hellmann </td>
+    </tr>
+  </table>
+  <table width="760"  border="0" cellspacing="1" cellpadding="0" class="contenido">
+     <tr>
+      <th colspan="7">Dimensi&oacute;n 1: RESULTADOS</th>
+    </tr>
+	<tr class="header">
+      <td colspan="2" rowspan="2">Descripci&oacute;n del Objetivo</td>
+      <td width="90" rowspan="2">Cuantificaci&oacute;n</td>
+      <td width="85" rowspan="2">Ponderaci&oacute;n</td>
+      <td colspan="2">Grado de Consecuci&oacute;n</td>
+      <td width="84" rowspan="2">Resultado</td>
+    </tr>
+    <tr class="header">
+      <td width="52">Junio</td>
+      <td width="75">Diciembre</td>
+    </tr>
+    <tr class="impar" id="center">
+      <td width="21" align="center"><a href="javascript:showRow('1');"><img src="img/mas.gif" id="img_1" width="16" height="16" border="0"></a></td>
+      <td width="345" align="left">Comisiones Bis </td>
+      <td>+ xx % </td>
+      <td>15%</td>
+      <td><input name="textfield" type="text" size="3"></td>
+      <td><input name="textfield" type="text" size="3"></td>
+      <td><input name="textfield" type="text" size="3"></td>
+    </tr>
+    <tr class="impar" id="tr_1" style="DISPLAY: none" expansible="true">
+      <td align="center">&nbsp;</td>
+      <td colspan="6" align="center"><table width="725"  border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+        <tr bgcolor="#CCCCCC" align="center">
+          <td width="165" rowspan="2" ><strong>Fuente de la info</strong></td>
+          <td colspan="5" align="center"  ><strong>Grilla de Cumplimiento </strong></td>
+          <td width="310" rowspan="2" align="center" ><strong>Comentario</strong></td>
+        </tr>
+        <tr bgcolor="#CCCCCC" align="center">
+          <td width="50"  ><strong>0 %</strong></td>
+          <td width="50" ><strong>50 %</strong></td>
+          <td width="50"  ><strong>75 %</strong></td>
+          <td width="50" ><strong>100 %</strong></td>
+          <td width="50" ><strong>125 %</strong></td>
+          </tr>
+        <tr class="impar" id="center">
+          <td>ioioioioioioioioio</td>
+          <td>iooioioi</td>
+          <td>ioioioioi</td>
+          <td>iioioioioi</td>
+          <td>ioioioioio</td>
+          <td>ioioioioioio</td>
+		  <td>ioioioioioio</td>
+        </tr>
+      </table></td>
+    </tr>
+    <tr class="par" id="center">
+      <td align="center"><a href="javascript:showRow('2');"><img src="img/mas.gif"width="16" height="16" border="0" id="img_2"></a></td>
+      <td align="left">Comisiones Open Market</td>
+      <td>+ xx % </td>
+      <td>20%</td>
+      <td><input name="textfield" type="text" size="3"></td>
+      <td><input name="textfield" type="text" size="3"></td>
+      <td><input name="textfield" type="text" size="3"></td>
+    </tr>
+    <tr class="par" id="tr_2" style="DISPLAY: none" expansible="true">
+      <td align="center">&nbsp;</td>
+      <td colspan="6" align="center"><table width="725"  border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+        <tr bgcolor="#CCCCCC" align="center">
+          <td width="165" rowspan="2" ><strong>Fuente de la info</strong></td>
+          <td colspan="5" align="center"  ><strong>Grilla de Cumplimiento </strong></td>
+          <td width="310" rowspan="2" align="center" ><strong>Comentario</strong></td>
+        </tr>
+        <tr bgcolor="#CCCCCC" align="center">
+          <td width="50"  ><strong>0 %</strong></td>
+          <td width="50" ><strong>50 %</strong></td>
+          <td width="50"  ><strong>75 %</strong></td>
+          <td width="50" ><strong>100 %</strong></td>
+          <td width="50" ><strong>125 %</strong></td>
+        </tr>
+        <tr class="impar" id="center">
+          <td>ioioioioioioioioio</td>
+          <td>iooioioi</td>
+          <td>ioioioioi</td>
+          <td>iioioioioi</td>
+          <td>ioioioioio</td>
+          <td>ioioioioioio</td>
+          <td>ioioioioioio</td>
+        </tr>
+      </table></td>
+    </tr>
+    <tr class="impar" id="center">
+      <td align="center"><a href="javascript:showRow('3');"><img src="img/mas.gif" width="16" height="16" border="0" id="img_3"></a></td>
+      <td align="left">Comisiones Open Market</td>
+      <td>+ xx % </td>
+      <td>10%</td>
+      <td><input name="textfield" type="text" size="3"></td>
+      <td><input name="textfield" type="text" size="3"></td>
+      <td><input name="textfield" type="text" size="3"></td>
+    </tr>
+    <tr class="impar" id="tr_3" style="DISPLAY: none" expansible="true">
+      <td>&nbsp;</td>
+      <td colspan="6" align="center"><table width="725"  border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+        <tr bgcolor="#CCCCCC" align="center">
+          <td width="165" rowspan="2" ><strong>Fuente de la info</strong></td>
+          <td colspan="5" align="center"  ><strong>Grilla de Cumplimiento </strong></td>
+          <td width="310" rowspan="2" align="center" ><strong>Comentario</strong></td>
+        </tr>
+        <tr bgcolor="#CCCCCC" align="center">
+          <td width="50"  ><strong>0 %</strong></td>
+          <td width="50" ><strong>50 %</strong></td>
+          <td width="50"  ><strong>75 %</strong></td>
+          <td width="50" ><strong>100 %</strong></td>
+          <td width="50" ><strong>125 %</strong></td>
+        </tr>
+        <tr class="impar" id="center">
+          <td>ioioioioioioioioio</td>
+          <td>iooioioi</td>
+          <td>ioioioioi</td>
+          <td>iioioioioi</td>
+          <td>ioioioioio</td>
+          <td>ioioioioioio</td>
+          <td>ioioioioioio</td>
+        </tr>
+      </table></td>
+    </tr>
+    <tr class="total">
+      <td colspan="2">Totales</td>
+      <td align="center">100 %</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">0%</td>
+    </tr>
+  </table>
+  <table width="760"  border="0" cellspacing="1" cellpadding="0" class="contenido">
+    <tr>
+      <th colspan="7">Dimensi&oacute;n 2: NEGOCIOS </th>
+    </tr>
+    <tr class="header">
+      <td colspan="2" rowspan="2">Descripci&oacute;n del Objetivo</td>
+      <td width="90" rowspan="2">Cuantificaci&oacute;n</td>
+      <td width="85" rowspan="2">Ponderaci&oacute;n</td>
+      <td colspan="2">Grado de Consecuci&oacute;n</td>
+      <td width="84" rowspan="2">Resultado</td>
+    </tr>
+    <tr class="header">
+      <td width="52">Junio</td>
+      <td width="75">Diciembre</td>
+    </tr>
+    <tr class="impar" id="center">
+      <td width="21" align="center"><a href="javascript:showRow('4');"><img src="img/mas.gif" id="img_4" width="16" height="16" border="0"></a></td>
+      <td width="345" align="left">Comisiones Bis </td>
+      <td>+ xx % </td>
+      <td>15%</td>
+      <td><input name="textfield4" type="text" size="3"></td>
+      <td><input name="textfield4" type="text" size="3"></td>
+      <td><input name="textfield4" type="text" size="3"></td>
+    </tr>
+    <tr class="impar" id="tr_4" style="DISPLAY: none" expansible="true">
+      <td align="center">&nbsp;</td>
+      <td colspan="6" align="center"><table width="725"  border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+          <tr bgcolor="#CCCCCC" align="center">
+            <td width="165" rowspan="2" ><strong>Fuente de la info</strong></td>
+            <td colspan="5" align="center"  ><strong>Grilla de Cumplimiento </strong></td>
+            <td width="310" rowspan="2" align="center" ><strong>Comentario</strong></td>
+          </tr>
+          <tr bgcolor="#CCCCCC" align="center">
+            <td width="50"  ><strong>0 %</strong></td>
+            <td width="50" ><strong>50 %</strong></td>
+            <td width="50"  ><strong>75 %</strong></td>
+            <td width="50" ><strong>100 %</strong></td>
+            <td width="50" ><strong>125 %</strong></td>
+          </tr>
+          <tr class="impar" id="center">
+            <td>ioioioioioioioioio</td>
+            <td>iooioioi</td>
+            <td>ioioioioi</td>
+            <td>iioioioioi</td>
+            <td>ioioioioio</td>
+            <td>ioioioioioio</td>
+            <td>ioioioioioio</td>
+          </tr>
+      </table></td>
+    </tr>
+    <tr class="par" id="center">
+      <td align="center"><a href="javascript:showRow('5');"><img src="img/mas.gif"width="16" height="16" border="0" id="img_5"></a></td>
+      <td align="left">Comisiones Open Market</td>
+      <td>+ xx % </td>
+      <td>20%</td>
+      <td><input name="textfield4" type="text" size="3"></td>
+      <td><input name="textfield4" type="text" size="3"></td>
+      <td><input name="textfield4" type="text" size="3"></td>
+    </tr>
+    <tr class="par" id="tr_5" style="DISPLAY: none" expansible="true">
+      <td align="center">&nbsp;</td>
+      <td colspan="6" align="center"><table width="725"  border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+          <tr bgcolor="#CCCCCC" align="center">
+            <td width="165" rowspan="2" ><strong>Fuente de la info</strong></td>
+            <td colspan="5" align="center"  ><strong>Grilla de Cumplimiento </strong></td>
+            <td width="310" rowspan="2" align="center" ><strong>Comentario</strong></td>
+          </tr>
+          <tr bgcolor="#CCCCCC" align="center">
+            <td width="50"  ><strong>0 %</strong></td>
+            <td width="50" ><strong>50 %</strong></td>
+            <td width="50"  ><strong>75 %</strong></td>
+            <td width="50" ><strong>100 %</strong></td>
+            <td width="50" ><strong>125 %</strong></td>
+          </tr>
+          <tr class="impar" id="center">
+            <td>ioioioioioioioioio</td>
+            <td>iooioioi</td>
+            <td>ioioioioi</td>
+            <td>iioioioioi</td>
+            <td>ioioioioio</td>
+            <td>ioioioioioio</td>
+            <td>ioioioioioio</td>
+          </tr>
+      </table></td>
+    </tr>
+    <tr class="impar" id="center">
+      <td align="center"><a href="javascript:showRow('6');"><img src="img/mas.gif" width="16" height="16" border="0" id="img_6"></a></td>
+      <td align="left">Comisiones Open Market</td>
+      <td>+ xx % </td>
+      <td>10%</td>
+      <td><input name="textfield4" type="text" size="3"></td>
+      <td><input name="textfield4" type="text" size="3"></td>
+      <td><input name="textfield4" type="text" size="3"></td>
+    </tr>
+    <tr class="impar" id="tr_6" style="DISPLAY: none" expansible="true">
+      <td>&nbsp;</td>
+      <td colspan="6" align="center"><table width="725"  border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+          <tr bgcolor="#CCCCCC" align="center">
+            <td width="165" rowspan="2" ><strong>Fuente de la info</strong></td>
+            <td colspan="5" align="center"  ><strong>Grilla de Cumplimiento </strong></td>
+            <td width="310" rowspan="2" align="center" ><strong>Comentario</strong></td>
+          </tr>
+          <tr bgcolor="#CCCCCC" align="center">
+            <td width="50"  ><strong>0 %</strong></td>
+            <td width="50" ><strong>50 %</strong></td>
+            <td width="50"  ><strong>75 %</strong></td>
+            <td width="50" ><strong>100 %</strong></td>
+            <td width="50" ><strong>125 %</strong></td>
+          </tr>
+          <tr class="impar" id="center">
+            <td>ioioioioioioioioio</td>
+            <td>iooioioi</td>
+            <td>ioioioioi</td>
+            <td>iioioioioi</td>
+            <td>ioioioioio</td>
+            <td>ioioioioioio</td>
+            <td>ioioioioioio</td>
+          </tr>
+      </table></td>
+    </tr>
+    <tr class="total">
+      <td colspan="2">Totales</td>
+      <td align="center">100 %</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">0%</td>
+    </tr>
+  </table>
+  <table width="760"  border="0" cellspacing="1" cellpadding="0" class="contenido">
+    <tr>
+      <th colspan="7">Dimensi&oacute;n 3: IMAGEN, CLIENTES Y PROCESOS </th>
+    </tr>
+    <tr class="header">
+      <td colspan="2" rowspan="2">Descripci&oacute;n del Objetivo</td>
+      <td width="90" rowspan="2">Cuantificaci&oacute;n</td>
+      <td width="85" rowspan="2">Ponderaci&oacute;n</td>
+      <td colspan="2">Grado de Consecuci&oacute;n</td>
+      <td width="84" rowspan="2">Resultado</td>
+    </tr>
+    <tr class="header">
+      <td width="52">Junio</td>
+      <td width="75">Diciembre</td>
+    </tr>
+    <tr class="impar" id="center">
+      <td width="21" align="center"><a href="javascript:showRow('7');"><img src="img/mas.gif" id="img_7" width="16" height="16" border="0"></a></td>
+      <td width="345" align="left">Comisiones Bis </td>
+      <td>+ xx % </td>
+      <td>15%</td>
+      <td><input name="textfield5" type="text" size="3"></td>
+      <td><input name="textfield5" type="text" size="3"></td>
+      <td><input name="textfield5" type="text" size="3"></td>
+    </tr>
+    <tr class="impar" id="tr_7" style="DISPLAY: none" expansible="true">
+      <td align="center">&nbsp;</td>
+      <td colspan="6" align="center"><table width="725"  border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+          <tr bgcolor="#CCCCCC" align="center">
+            <td width="165" rowspan="2" ><strong>Fuente de la info</strong></td>
+            <td colspan="5" align="center"  ><strong>Grilla de Cumplimiento </strong></td>
+            <td width="310" rowspan="2" align="center" ><strong>Comentario</strong></td>
+          </tr>
+          <tr bgcolor="#CCCCCC" align="center">
+            <td width="50"  ><strong>0 %</strong></td>
+            <td width="50" ><strong>50 %</strong></td>
+            <td width="50"  ><strong>75 %</strong></td>
+            <td width="50" ><strong>100 %</strong></td>
+            <td width="50" ><strong>125 %</strong></td>
+          </tr>
+          <tr class="impar" id="center">
+            <td>ioioioioioioioioio</td>
+            <td>iooioioi</td>
+            <td>ioioioioi</td>
+            <td>iioioioioi</td>
+            <td>ioioioioio</td>
+            <td>ioioioioioio</td>
+            <td>ioioioioioio</td>
+          </tr>
+      </table></td>
+    </tr>
+    <tr class="par" id="center">
+      <td align="center"><a href="javascript:showRow('8');"><img src="img/mas.gif"width="16" height="16" border="0" id="img_8"></a></td>
+      <td align="left">Comisiones Open Market</td>
+      <td>+ xx % </td>
+      <td>20%</td>
+      <td><input name="textfield5" type="text" size="3"></td>
+      <td><input name="textfield5" type="text" size="3"></td>
+      <td><input name="textfield5" type="text" size="3"></td>
+    </tr>
+    <tr class="par" id="tr_8" style="DISPLAY: none" expansible="true">
+      <td align="center">&nbsp;</td>
+      <td colspan="6" align="center"><table width="725"  border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+          <tr bgcolor="#CCCCCC" align="center">
+            <td width="165" rowspan="2" ><strong>Fuente de la info</strong></td>
+            <td colspan="5" align="center"  ><strong>Grilla de Cumplimiento </strong></td>
+            <td width="310" rowspan="2" align="center" ><strong>Comentario</strong></td>
+          </tr>
+          <tr bgcolor="#CCCCCC" align="center">
+            <td width="50"  ><strong>0 %</strong></td>
+            <td width="50" ><strong>50 %</strong></td>
+            <td width="50"  ><strong>75 %</strong></td>
+            <td width="50" ><strong>100 %</strong></td>
+            <td width="50" ><strong>125 %</strong></td>
+          </tr>
+          <tr class="impar" id="center">
+            <td>ioioioioioioioioio</td>
+            <td>iooioioi</td>
+            <td>ioioioioi</td>
+            <td>iioioioioi</td>
+            <td>ioioioioio</td>
+            <td>ioioioioioio</td>
+            <td>ioioioioioio</td>
+          </tr>
+      </table></td>
+    </tr>
+    <tr class="impar" id="center">
+      <td align="center"><a href="javascript:showRow('9');"><img src="img/mas.gif" width="16" height="16" border="0" id="img_9"></a></td>
+      <td align="left">Comisiones Open Market</td>
+      <td>+ xx % </td>
+      <td>10%</td>
+      <td><input name="textfield5" type="text" size="3"></td>
+      <td><input name="textfield5" type="text" size="3"></td>
+      <td><input name="textfield5" type="text" size="3"></td>
+    </tr>
+    <tr class="impar" id="tr_9" style="DISPLAY: none" expansible="true">
+      <td>&nbsp;</td>
+      <td colspan="6" align="center"><table width="725"  border="0" cellpadding="0" cellspacing="1" bgcolor="#CCCCCC">
+          <tr bgcolor="#CCCCCC" align="center">
+            <td width="165" rowspan="2" ><strong>Fuente de la info</strong></td>
+            <td colspan="5" align="center"  ><strong>Grilla de Cumplimiento </strong></td>
+            <td width="310" rowspan="2" align="center" ><strong>Comentario</strong></td>
+          </tr>
+          <tr bgcolor="#CCCCCC" align="center">
+            <td width="50"  ><strong>0 %</strong></td>
+            <td width="50" ><strong>50 %</strong></td>
+            <td width="50"  ><strong>75 %</strong></td>
+            <td width="50" ><strong>100 %</strong></td>
+            <td width="50" ><strong>125 %</strong></td>
+          </tr>
+          <tr class="impar" id="center">
+            <td>ioioioioioioioioio</td>
+            <td>iooioioi</td>
+            <td>ioioioioi</td>
+            <td>iioioioioi</td>
+            <td>ioioioioio</td>
+            <td>ioioioioioio</td>
+            <td>ioioioioioio</td>
+          </tr>
+      </table></td>
+    </tr>
+    <tr class="total">
+      <td colspan="2">Totales</td>
+      <td align="center">100 %</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">&nbsp;</td>
+      <td align="center">0%</td>
+    </tr>
+  </table>
+  <table width="760" border="0" cellspacing="0" cellpadding="0" class="comentario">
+    <tr>
+      <th>Comentarios:</th>
+    </tr>
+    <tr>
+      <td><textarea name="textfield" cols="95" rows="5"></textarea></td>
+    </tr>
+  </table>
+  <table width="760" border="0" cellspacing="0" cellpadding="0" class="evaluacion">
+    <tr>
+      <th colspan="5">Marcar  la casilla que corresponda</th>
+    </tr>
+    <tr>
+      <td width="20%" align="center" valign="top"><table width="85%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>
+            <input name="radiobutton" type="radio" value="radiobutton">          </td>
+        </tr>
+        <tr>
+          <td>Cumplimiento <br>
+  Excepcional</td>
+        </tr>
+      </table>
+      </td>
+      <td width="20%" align="center" valign="top"><table width="85%"  border="0" cellspacing="0" cellpadding="0" class="evaluacionFinal">
+        <tr>
+          <td>
+            <input name="radiobutton" type="radio" value="radiobutton">
+          </td>
+        </tr>
+        <tr>
+          <td>Cumplimiento <br>
+      Destacado</td>
+        </tr>
+      </table>      </td>
+      <td width="20%" align="center" valign="top"><table width="85%"  border="0" cellspacing="0" cellpadding="0" class="evaluacionFinal">
+        <tr>
+          <td>
+            <input name="radiobutton" type="radio" value="radiobutton">
+          </td>
+        </tr>
+        <tr>
+          <td>Cumplimiento <br>
+      Esperado</td>
+        </tr>
+      </table>      </td>
+      <td width="20%" align="center" valign="top"><table width="85%"  border="0" cellspacing="0" cellpadding="0" class="evaluacionFinal">
+        <tr>
+          <td>
+            <input name="radiobutton" type="radio" value="radiobutton">
+          </td>
+        </tr>
+        <tr>
+          <td>Cumplimiento <br>
+      Proximo</td>
+        </tr>
+      </table>      </td>
+      <td width="20%" align="center" valign="top"><table width="85%"  border="0" cellspacing="0" cellpadding="0" class="evaluacionFinal">
+        <tr>
+          <td>
+            <input name="radiobutton" type="radio" value="radiobutton">
+          </td>
+        </tr>
+        <tr>
+          <td>Cumplimiento <br>
+      Mejorable</td>
+        </tr>
+      </table>      </td>
+    </tr>
+  </table>
+  <table width="760" border="0" cellspacing="0" cellpadding="0" class="botones">
+    <tr>
+      <td><img src="img/botones/b_aceptar.gif" width="60" height="20">&nbsp;<img src="img/botones/b_volver.gif" width="60" height="20"></td>
+    </tr>
+  </table>
+  <br>
+</div>
+</body>
+</html>
